@@ -1,11 +1,11 @@
-stt,chuyen_nganh,ten_tieng_anh,tong_tren_pubmed_2020_2024,da_tai_dot_nay,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid
-1,Ngoại khoa,Surgery,84546,1000,1497,99.6%,39.4%
-2,Xét nghiệm chẩn đoán,Laboratory diagnostics,48624,1000,1501,99.6%,39.4%
-3,Ung thư,Cancer,55343,999,1500,99.6%,39.4%
-4,Giải phẫu học,Anatomy,27654,1000,1500,99.6%,39.4%
-5,Nội khoa,Internal medicine,29576,996,1497,99.6%,39.4%
-6,Miễn dịch học,Immunology,37638,1000,1501,99.6%,39.4%
-7,Di truyền học,Genetics,12896,959,1440,99.6%,39.4%
-8,Sinh học tính toán,Computational biology,7921,999,1500,99.6%,39.4%
-9,Dược lý học,Pharmacology,4359,999,1497,99.6%,39.4%
-10,Bệnh học,Pathology,4033,998,1497,99.6%,39.4%
+stt,chuyen_nganh,ten_tieng_anh,tong_tren_pubmed_2015_2019,da_tai_dot_3,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid
+1,Xét nghiệm chẩn đoán,Laboratory diagnostics,41427,1000,2501,99.5%,36.2%
+2,Miễn dịch học,Immunology,18235,999,2500,99.5%,36.2%
+3,Ung thư,Cancer,39038,1000,2500,99.5%,36.2%
+4,Giải phẫu học,Anatomy,21254,999,2499,99.5%,36.2%
+5,Ngoại khoa,Surgery,84231,1000,2497,99.5%,36.2%
+6,Bệnh học,Pathology,3244,997,2494,99.5%,36.2%
+7,Dược lý học,Pharmacology,4544,996,2493,99.5%,36.2%
+8,Sinh học tính toán,Computational biology,4232,987,2487,99.5%,36.2%
+9,Nội khoa,Internal medicine,21391,989,2486,99.5%,36.2%
+10,Di truyền học,Genetics,9083,886,2326,99.5%,36.2%
