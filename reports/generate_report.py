@@ -26,6 +26,7 @@ def main():
     with_doi = con.execute("SELECT COUNT(*) FROM records WHERE doi IS NOT NULL AND doi != ''").fetchone()[0]
     with_pmcid = con.execute("SELECT COUNT(*) FROM records WHERE pmcid IS NOT NULL AND pmcid != ''").fetchone()[0]
     with_mesh = con.execute("SELECT COUNT(*) FROM records WHERE mesh_terms_json IS NOT NULL AND mesh_terms_json != '[]'").fetchone()[0]
+    with_abs = con.execute("SELECT COUNT(*) FROM records WHERE abstract IS NOT NULL AND abstract != ''").fetchone()[0]
 
     specialties = con.execute(
         "SELECT specialty, COUNT(*) FROM record_specialties GROUP BY specialty ORDER BY COUNT(*) DESC"
@@ -49,6 +50,7 @@ def main():
 
 ## 1. Thống Kê Tổng Thể
 - **Tổng số bản ghi duy nhất:** {total:,} bài
+- **Bản ghi có tóm tắt nghiên cứu gốc (Full Abstract):** {with_abs:,} ({with_abs/total*100:.1f}%)
 - **Bản ghi có DOI:** {with_doi:,} ({with_doi/total*100:.1f}%)
 - **Bản ghi có PMCID (khả năng lấy toàn văn):** {with_pmcid:,} ({with_pmcid/total*100:.1f}%)
 - **Bản ghi có thuật ngữ MeSH:** {with_mesh:,} ({with_mesh/total*100:.1f}%)
