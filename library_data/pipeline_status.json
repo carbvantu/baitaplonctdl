@@ -1,9 +1,9 @@
 {
-  "run_id": "vcu_20261017T161926Z",
+  "run_id": "vcu_20261017T164130Z",
   "run_mode": "live_api_collection",
   "live_api_requests_made": true,
-  "finished_at": "2026-10-17T23:23:52+07:00",
+  "finished_at": "2026-10-17T23:44:51+07:00",
   "database": "C:\\VCU_Library_Starter_Pack\\library_data\\vcu_biomedical_library.sqlite",
-  "records_in_jsonl": 31911,
+  "records_in_jsonl": 48520,
   "note": "Seed-only mode makes no network requests; live search counts remain unmeasured. In live mode, inventory counts come from E-utilities ESearch responses. Seed records are not claimed as a comprehensive corpus."
 }
