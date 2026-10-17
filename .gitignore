@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary sqlite WAL and shared memory files
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite.tmp
+*.tmp
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

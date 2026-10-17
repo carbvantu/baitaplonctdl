@@ -1,0 +1,11 @@
+stt,chuyen_nganh,ten_tieng_anh,tong_tren_pubmed_2020_2024,da_tai_dot_nay,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid
+1,Ngoại khoa,Surgery,84546,1000,1497,99.6%,39.4%
+2,Xét nghiệm chẩn đoán,Laboratory diagnostics,48624,1000,1501,99.6%,39.4%
+3,Ung thư,Cancer,55343,999,1500,99.6%,39.4%
+4,Giải phẫu học,Anatomy,27654,1000,1500,99.6%,39.4%
+5,Nội khoa,Internal medicine,29576,996,1497,99.6%,39.4%
+6,Miễn dịch học,Immunology,37638,1000,1501,99.6%,39.4%
+7,Di truyền học,Genetics,12896,959,1440,99.6%,39.4%
+8,Sinh học tính toán,Computational biology,7921,999,1500,99.6%,39.4%
+9,Dược lý học,Pharmacology,4359,999,1497,99.6%,39.4%
+10,Bệnh học,Pathology,4033,998,1497,99.6%,39.4%
