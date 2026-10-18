@@ -1,88 +1,95 @@
-# BÁO CÁO TỔNG HỢP TOÀN DIỆN KHO DỮ LIỆU Y SINH HỌC VCU (1990 – 2026)
-**Hệ thống Kho Dữ liệu Y Sinh học VCU (VCU Biomedical Library)**  
-*Trạng thái: Hoàn tất quét sâu đa tầng bù đắp dữ liệu bị bỏ sót | Cập nhật lúc: 18/10/2026*
+# BÁO CÁO CẬP NHẬT KHO DỮ LIỆU Y SINH HỌC VCU
+*Thời gian xuất báo cáo: 18/10/2026 07:34:49*
+
+## 1. Thống Kê Tổng Thể Toàn Bộ Thư Viện
+- **Tổng số bản ghi duy nhất:** 91,475 bài
+- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 65,083 (71.1%)
+- **Bản ghi có định danh số DOI:** 82,165 (89.8%)
+- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 24,521 (26.8%)
+- **Bản ghi có thuật ngữ y học MeSH:** 83,969 (91.8%)
 
 ---
 
-## 1. Thông Tin Tổng Quan Kho Dữ Liệu
-
-- **Cơ quan thu thập:** VCU Biomedical Library Pipeline
-- **Email vận hành:** `dotu020806@gmail.com`
-- **Công cụ:** `VCUBiomedicalLibrary/1.0` (tuân thủ NCBI E-utilities Policy $\le$ 3 req/s)
-- **Tiêu chuẩn dữ liệu:** **Bảo toàn 100% nội dung gốc của bài báo khoa học, giữ nguyên toàn văn Tóm tắt nghiên cứu (Full Abstract), không tóm tắt, không rút gọn, bảo lưu nguyên vẹn tiêu đề, tác giả, tạp chí, mã định danh DOI, PMCID và hệ thống thuật ngữ y khoa MeSH.**
-- **Tổng quy mô hiện tại:** **82,351 bài báo y sinh học duy nhất** đã được làm sạch và khử trùng lặp qua định danh gốc PMID.
+## 2. Thống Kê Riêng Giai Đoạn 2020 – 2024
+- **Tổng số bài giai đoạn 2020 – 2024:** 17,599 bài
+- **Bài có Full Abstract (tóm tắt gốc tác giả):** 9,444 (53.7%)
+- **Bài có mã DOI:** 17,498 (99.4%)
+- **Bài có PMCID:** 7,536 (42.8%)
 
 ---
 
-## 2. Bảng Tổng Hợp Chi Tiết 10 Đợt Thu Thập Đã Hợp Nhất
-
-| STT | Đợt chạy | Khoảng thời gian | Kỹ thuật / Phân trang | Mục tiêu dữ liệu | Số bài mới | Tổng CSDL |
-|:---:|:---:|:---:|:---:|:---|:---:|:---:|
-| 1 | **Đợt 1** | 2026 – 2027 | Cơ sở ban đầu (Top 500) | Nghiên cứu mới nhất, xuất bản sớm | 4,522 | 4,522 |
-| 2 | **Đợt 2** | 2020 – 2024 | Quét 5 năm (Top 1000) | Đại dịch COVID-19, AI y sinh, vắc-xin | 9,138 | 13,660 |
-| 3 | **Đợt 3** | 2015 – 2019 | Quét 5 năm (Top 1000) | Liệu pháp miễn dịch CAR-T, CRISPR | 9,122 | 22,782 |
-| 4 | **Đợt 4** | 2010 – 2014 | Bật Full Abstract gốc | Giải trình tự gen NGS, thử nghiệm đối chứng | 9,132 | 31,914 |
-| 5 | **Đợt 5** | 2000 – 2009 | Bật Full Abstract gốc | Dự án Bộ gen người, thuốc nhắm đích | 8,816 | 40,730 |
-| 6 | **Đợt 6** | 1990 – 1999 | Bật Full Abstract gốc | Y học thực chứng, phẫu thuật nội soi đầu | 7,794 | 48,524 |
-| 7 | **Đợt 7** | 1990 – 1994 | Bù đắp nửa đầu thập niên 90 | Nghiên cứu bị che khuất giai đoạn 1990–1994 | 6,654 | 55,178 |
-| 8 | **Đợt 8** | 2000 – 2004 | Bù đắp nửa đầu thập niên 2000 | Nghiên cứu bị che khuất giai đoạn 2000–2004 | 8,830 | 64,008 |
-| 9 | **Đợt 9** | 2010 – 2014 | Trang 2 (`--retstart 1000`) | Quét vét nhóm bài 1,001–2,000 | 9,233 | 73,241 |
-| 10 | **Đợt 10** | 2015 – 2019 | Trang 2 (`--retstart 1000`) | Quét vét nhóm bài 1,001–2,000 | 9,110 | **82,351** |
-
----
-
-## 3. Bảng Kiểm Kê Dữ Liệu Theo 10 Chuyên Ngành Y Học (Lũy Kế 82,351 Bài)
-
-| STT | Chuyên ngành | Tên Tiếng Anh | Tổng bản ghi tích lũy | Tỷ lệ có DOI | Tỷ lệ có MeSH | Tỷ lệ có Full Abstract | Tình trạng |
+## 3. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
+| STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| 1 | **Ngoại khoa** | *Surgery* | **9,497 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 2 | **Ung thư** | *Cancer* | **9,482 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 3 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | **9,416 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 4 | **Giải phẫu học** | *Anatomy* | **9,408 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 5 | **Miễn dịch học** | *Immunology* | **9,390 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 6 | **Nội khoa** | *Internal medicine* | **9,255 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 7 | **Bệnh học** | *Pathology* | **8,962 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 8 | **Dược lý học** | *Pharmacology* | **8,870 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 9 | **Sinh học tính toán** | *Computational biology* | **7,321 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| 10 | **Di truyền học** | *Genetics* | **6,883 bài** | 88.8% | 93.1% | 67.3% | Hoàn tất |
-| -- | **Tổng cộng (Khử trùng lặp)** | *10 Chuyên Ngành Trọng Tâm* | **82,351 bài duy nhất** | **88.8%** | **93.1%** | **67.3%** | **100% Hoàn tất** |
+| 1 | **Ngoại khoa** | *Surgery* | 10,497 | 88.0% | 10.6% | 100.0% | 66.2% |
+| 2 | **Ung thư** | *Cancer* | 10,482 | 92.5% | 25.3% | 93.5% | 75.1% |
+| 3 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 10,415 | 87.1% | 22.5% | 95.4% | 68.3% |
+| 4 | **Giải phẫu học** | *Anatomy* | 10,407 | 89.6% | 24.2% | 89.1% | 75.1% |
+| 5 | **Miễn dịch học** | *Immunology* | 10,388 | 89.9% | 34.1% | 88.5% | 73.6% |
+| 6 | **Nội khoa** | *Internal medicine* | 10,247 | 87.9% | 28.2% | 92.0% | 69.7% |
+| 7 | **Bệnh học** | *Pathology* | 9,960 | 85.6% | 24.6% | 90.2% | 70.9% |
+| 8 | **Dược lý học** | *Pharmacology* | 9,868 | 90.3% | 22.6% | 95.0% | 68.7% |
+| 9 | **Sinh học tính toán** | *Computational biology* | 8,305 | 96.0% | 39.0% | 89.6% | 71.3% |
+| 10 | **Di truyền học** | *Genetics* | 7,843 | 95.9% | 41.0% | 85.2% | 70.8% |
+| 11 | **Bệnh học tính toán (Seed)** | *Computational pathology* | 1 | 100.0% | 100.0% | 0.0% | 0.0% |
+| 12 | **Trí tuệ nhân tạo lâm sàng (Seed)** | *Clinical AI / imaging* | 1 | 100.0% | 100.0% | 0.0% | 0.0% |
 
 ---
 
-## 4. Bộ Chỉ Số Đánh Giá Chất Lượng Toàn Diện Của Kho Dữ Liệu
-
-- **Tổng số bản ghi khoa học:** **82,351 bài báo y sinh học**.
-- **Bản ghi có Toàn văn Tóm tắt nghiên cứu gốc (Full Abstract):** **55,427 bài (67.3%)** — giữ nguyên vẹn các phần cấu trúc *Aim, Background, Methods, Results, Conclusions* của tác giả gốc.
-- **Độ phủ mã định danh DOI (Digital Object Identifier):** **73,110 / 82,351 bài (88.8%)** — liên kết trực tiếp tới ấn phẩm gốc của các nhà xuất bản hàng đầu.
-- **Bản ghi có mã PMCID (PubMed Central):** **19,883 bài (24.1%)** — gần 20,000 bài nghiên cứu sẵn sàng cho việc tải toàn văn bài báo (Full-Text XML) miễn phí hợp pháp qua PMC Open Access subset.
-- **Bản ghi được lập chỉ mục thuật ngữ chuẩn hóa MeSH:** **76,687 bài (93.1%)** — đạt độ phủ thuật ngữ y khoa đặc biệt cao.
-
----
-
-## 5. Top 10 Tạp Chí Khoa Học Có Số Lượng Bài Lớn Nhất Trong Kho
-
-| STT | Tên Tạp chí Y học | Số bài trong kho |
+## 4. Top 10 Tạp Chí Xuất Bản Uy Tín
+| STT | Tạp chí | Số lượng bài |
 |:---:|:---|:---:|
-| 1 | *Journal of Clinical Oncology (ASCO)* | 527 |
-| 2 | *Nihon rinsho. Japanese journal of clinical medicine* | 354 |
-| 3 | *Archives of Pathology & Laboratory Medicine* | 344 |
-| 4 | *Frontiers in Immunology* | 299 |
-| 5 | *Journal of Ethnopharmacology* | 282 |
-| 6 | *International Journal of Molecular Sciences* | 264 |
-| 7 | *Cancer* | 261 |
-| 8 | *Annals of Oncology (ESMO)* | 221 |
-| 9 | *Pharmacogenomics* | 218 |
-| 10 | *Clinics in Laboratory Medicine* | 209 |
+| 1 | *Journal of clinical oncology : official journal of the American Society of Clinical Oncology* | 554 |
+| 2 | *Frontiers in immunology* | 419 |
+| 3 | *International journal of molecular sciences* | 400 |
+| 4 | *Journal of ethnopharmacology* | 359 |
+| 5 | *Nihon rinsho. Japanese journal of clinical medicine* | 354 |
+| 6 | *Archives of pathology & laboratory medicine* | 348 |
+| 7 | *Cancer* | 276 |
+| 8 | *Cancers* | 268 |
+| 9 | *PloS one* | 236 |
+| 10 | *Annals of oncology : official journal of the European Society for Medical Oncology* | 236 |
 
 ---
 
-## 6. Danh Mục Tệp Dữ Liệu Hiện Tại
-
-- **Kho lưu trữ chính:**
-  - [vcu_biomedical_library.sqlite](file:///c:/VCU_Library_Starter_Pack/library_data/vcu_biomedical_library.sqlite) (**187.6 MB**): Cơ sở dữ liệu SQLite quan hệ đầy đủ dữ liệu 82,351 bài.
-  - [metadata_pubmed.csv](file:///c:/VCU_Library_Starter_Pack/library_data/metadata_pubmed.csv) (**123.3 MB**): Bảng dữ liệu mở trong Excel.
-  - [metadata_pubmed.jsonl](file:///c:/VCU_Library_Starter_Pack/library_data/metadata_pubmed.jsonl) (**148.8 MB**): Dữ liệu dòng JSON cho AI/RAG.
-- **Thư mục báo cáo (`reports/`):**
-  - [BAO_CAO_TONG_HOP_THU_THAP.md](file:///c:/VCU_Library_Starter_Pack/reports/BAO_CAO_TONG_HOP_THU_THAP.md): Báo cáo tổng hợp chi tiết định dạng Markdown.
-  - [specialty_summary_report.csv](file:///c:/VCU_Library_Starter_Pack/reports/specialty_summary_report.csv): Bảng tóm tắt số liệu chuyên ngành.
-  - [generate_report.py](file:///c:/VCU_Library_Starter_Pack/reports/generate_report.py): Công cụ tự động cập nhật báo cáo.
+## 5. Phân Bố Theo Năm Xuất Bản (1990 – 2027)
+| Năm | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract |
+|:---:|:---:|:---:|:---:|
+| 2027 | 104 | 0 | 0.0% |
+| 2026 | 4,792 | 0 | 0.0% |
+| 2025 | 7,197 | 2,089 | 29.0% |
+| 2024 | 8,669 | 5,600 | 64.6% |
+| 2023 | 1,469 | 1,401 | 95.4% |
+| 2022 | 607 | 566 | 93.2% |
+| 2021 | 331 | 0 | 0.0% |
+| 2020 | 6,523 | 1,877 | 28.8% |
+| 2019 | 8,352 | 4,915 | 58.8% |
+| 2018 | 2,273 | 2,051 | 90.2% |
+| 2017 | 718 | 698 | 97.2% |
+| 2016 | 212 | 200 | 94.3% |
+| 2015 | 5,429 | 5,253 | 96.8% |
+| 2014 | 9,113 | 8,780 | 96.3% |
+| 2013 | 2,195 | 2,134 | 97.2% |
+| 2012 | 1,018 | 1,008 | 99.0% |
+| 2011 | 452 | 442 | 97.8% |
+| 2010 | 2,379 | 2,300 | 96.7% |
+| 2009 | 5,121 | 4,905 | 95.8% |
+| 2008 | 880 | 845 | 96.0% |
+| 2007 | 363 | 346 | 95.3% |
+| 2006 | 1 | 1 | 100.0% |
+| 2005 | 277 | 264 | 95.3% |
+| 2004 | 6,991 | 6,113 | 87.4% |
+| 2003 | 800 | 698 | 87.2% |
+| 2002 | 404 | 369 | 91.3% |
+| 2001 | 309 | 273 | 88.3% |
+| 2000 | 49 | 45 | 91.8% |
+| 1999 | 5,789 | 4,906 | 84.7% |
+| 1998 | 698 | 587 | 84.1% |
+| 1997 | 382 | 290 | 75.9% |
+| 1996 | 336 | 255 | 75.9% |
+| 1995 | 287 | 223 | 77.7% |
+| 1994 | 4,873 | 3,978 | 81.6% |
+| 1993 | 1,252 | 1,028 | 82.1% |
+| 1992 | 381 | 305 | 80.1% |
+| 1991 | 227 | 176 | 77.5% |
+| 1990 | 222 | 162 | 73.0% |

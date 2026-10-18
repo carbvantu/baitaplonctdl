@@ -16,6 +16,21 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 DB_PATH = ROOT / "library_data" / "vcu_biomedical_library.sqlite"
 
+SPEC_VI_MAP = {
+    "Surgery": "Ngoại khoa",
+    "Cancer": "Ung thư",
+    "Laboratory diagnostics": "Xét nghiệm chẩn đoán",
+    "Anatomy": "Giải phẫu học",
+    "Immunology": "Miễn dịch học",
+    "Internal medicine": "Nội khoa",
+    "Pathology": "Bệnh học",
+    "Pharmacology": "Dược lý học",
+    "Computational biology": "Sinh học tính toán",
+    "Genetics": "Di truyền học",
+    "Computational pathology": "Bệnh học tính toán (Seed)",
+    "Clinical AI / imaging": "Trí tuệ nhân tạo lâm sàng (Seed)",
+}
+
 def main():
     if not DB_PATH.exists():
         print(f"Error: Database not found at {DB_PATH}", file=sys.stderr)
@@ -26,18 +41,38 @@ def main():
     with_doi = con.execute("SELECT COUNT(*) FROM records WHERE doi IS NOT NULL AND doi != ''").fetchone()[0]
     with_pmcid = con.execute("SELECT COUNT(*) FROM records WHERE pmcid IS NOT NULL AND pmcid != ''").fetchone()[0]
     with_mesh = con.execute("SELECT COUNT(*) FROM records WHERE mesh_terms_json IS NOT NULL AND mesh_terms_json != '[]'").fetchone()[0]
-    with_abs = con.execute("SELECT COUNT(*) FROM records WHERE abstract IS NOT NULL AND abstract != ''").fetchone()[0]
+    with_abs = con.execute("SELECT COUNT(*) FROM records WHERE abstract IS NOT NULL AND length(abstract) > 0").fetchone()[0]
 
-    specialties = con.execute(
-        "SELECT specialty, COUNT(*) FROM record_specialties GROUP BY specialty ORDER BY COUNT(*) DESC"
-    ).fetchall()
+    # Specific stats for 2020-2024
+    c_2020_2024 = con.execute("""
+        SELECT COUNT(*), 
+               SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END),
+               SUM(CASE WHEN doi IS NOT NULL AND doi != '' THEN 1 ELSE 0 END),
+               SUM(CASE WHEN pmcid IS NOT NULL AND pmcid != '' THEN 1 ELSE 0 END)
+        FROM records 
+        WHERE SUBSTR(publication_date, 1, 4) IN ('2020', '2021', '2022', '2023', '2024')
+    """).fetchone()
+
+    spec_stats = con.execute("""
+        SELECT rs.specialty, COUNT(DISTINCT rs.pmid) as cnt,
+               SUM(CASE WHEN r.doi IS NOT NULL AND r.doi != '' THEN 1 ELSE 0 END)*100.0/COUNT(*) as p_doi,
+               SUM(CASE WHEN r.pmcid IS NOT NULL AND r.pmcid != '' THEN 1 ELSE 0 END)*100.0/COUNT(*) as p_pmc,
+               SUM(CASE WHEN r.mesh_terms_json IS NOT NULL AND r.mesh_terms_json != '[]' THEN 1 ELSE 0 END)*100.0/COUNT(*) as p_mesh,
+               SUM(CASE WHEN r.abstract IS NOT NULL AND length(r.abstract) > 0 THEN 1 ELSE 0 END)*100.0/COUNT(*) as p_abs
+        FROM record_specialties rs 
+        JOIN records r ON rs.pmid = r.pmid 
+        GROUP BY rs.specialty 
+        ORDER BY cnt DESC
+    """).fetchall()
 
     journals = con.execute(
         "SELECT journal, COUNT(*) FROM records WHERE journal != '' GROUP BY journal ORDER BY COUNT(*) DESC LIMIT 10"
     ).fetchall()
 
     years = con.execute(
-        "SELECT SUBSTR(publication_date, 1, 4) as yr, COUNT(*) FROM records GROUP BY yr ORDER BY yr DESC LIMIT 10"
+        "SELECT SUBSTR(publication_date, 1, 4) as yr, COUNT(*), "
+        "SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END) "
+        "FROM records GROUP BY yr ORDER BY yr DESC"
     ).fetchall()
 
     con.close()
@@ -48,27 +83,40 @@ def main():
     md_content = f"""# BÁO CÁO CẬP NHẬT KHO DỮ LIỆU Y SINH HỌC VCU
 *Thời gian xuất báo cáo: {now_str}*
 
-## 1. Thống Kê Tổng Thể
+## 1. Thống Kê Tổng Thể Toàn Bộ Thư Viện
 - **Tổng số bản ghi duy nhất:** {total:,} bài
-- **Bản ghi có tóm tắt nghiên cứu gốc (Full Abstract):** {with_abs:,} ({with_abs/total*100:.1f}%)
-- **Bản ghi có DOI:** {with_doi:,} ({with_doi/total*100:.1f}%)
-- **Bản ghi có PMCID (khả năng lấy toàn văn):** {with_pmcid:,} ({with_pmcid/total*100:.1f}%)
-- **Bản ghi có thuật ngữ MeSH:** {with_mesh:,} ({with_mesh/total*100:.1f}%)
+- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** {with_abs:,} ({with_abs/total*100:.1f}%)
+- **Bản ghi có định danh số DOI:** {with_doi:,} ({with_doi/total*100:.1f}%)
+- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** {with_pmcid:,} ({with_pmcid/total*100:.1f}%)
+- **Bản ghi có thuật ngữ y học MeSH:** {with_mesh:,} ({with_mesh/total*100:.1f}%)
 
-## 2. Phân Bố Theo Chuyên Ngành
-| STT | Chuyên ngành | Số lượng bản ghi |
-|:---:|:---|:---:|
+---
+
+## 2. Thống Kê Riêng Giai Đoạn 2020 – 2024
+- **Tổng số bài giai đoạn 2020 – 2024:** {c_2020_2024[0]:,} bài
+- **Bài có Full Abstract (tóm tắt gốc tác giả):** {c_2020_2024[1]:,} ({c_2020_2024[1]/c_2020_2024[0]*100:.1f}%)
+- **Bài có mã DOI:** {c_2020_2024[2]:,} ({c_2020_2024[2]/c_2020_2024[0]*100:.1f}%)
+- **Bài có PMCID:** {c_2020_2024[3]:,} ({c_2020_2024[3]/c_2020_2024[0]*100:.1f}%)
+
+---
+
+## 3. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
+| STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
+|:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
 """
-    for i, (spec, cnt) in enumerate(specialties, 1):
-        md_content += f"| {i} | {spec} | {cnt:,} |\n"
+    for i, (spec, cnt, p_doi, p_pmc, p_mesh, p_abs) in enumerate(spec_stats, 1):
+        vi_name = SPEC_VI_MAP.get(spec, spec)
+        md_content += f"| {i} | **{vi_name}** | *{spec}* | {cnt:,} | {p_doi:.1f}% | {p_pmc:.1f}% | {p_mesh:.1f}% | {p_abs:.1f}% |\n"
 
-    md_content += "\n## 3. Top 10 Tạp Chí\n| STT | Tạp chí | Số lượng bài |\n|:---:|:---|:---:|\n"
+    md_content += "\n---\n\n## 4. Top 10 Tạp Chí Xuất Bản Uy Tín\n| STT | Tạp chí | Số lượng bài |\n|:---:|:---|:---:|\n"
     for i, (jnl, cnt) in enumerate(journals, 1):
         md_content += f"| {i} | *{jnl}* | {cnt:,} |\n"
 
-    md_content += "\n## 4. Phân Bố Năm Xuất Bản\n| Năm | Số bài |\n|:---:|:---:|\n"
-    for yr, cnt in years:
-        md_content += f"| {yr or 'Không rõ'} | {cnt:,} |\n"
+    md_content += "\n---\n\n## 5. Phân Bố Theo Năm Xuất Bản (1990 – 2027)\n| Năm | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract |\n|:---:|:---:|:---:|:---:|\n"
+    for yr, cnt, abs_cnt in years:
+        if yr and yr.isdigit() and int(yr) >= 1990:
+            rate = abs_cnt / cnt * 100 if cnt > 0 else 0
+            md_content += f"| {yr} | {cnt:,} | {abs_cnt:,} | {rate:.1f}% |\n"
 
     report_path = HERE / f"bao_cao_tu_dong_{timestamp_tag}.md"
     latest_path = HERE / "BAO_CAO_TONG_HOP_THU_THAP.md"
