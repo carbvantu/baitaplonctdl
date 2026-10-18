@@ -11,6 +11,10 @@ __pycache__/
 *.temp.zip
 *.recomb.zip
 scratch/
+.git_token
+*.token
+*.pat
+.env*
 
 # Uncompressed large data files exceeding GitHub 100MB limit
 # (Full datasets are tracked as compressed .zip archives under 50MB)
