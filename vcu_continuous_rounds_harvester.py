@@ -502,13 +502,14 @@ def execute_round(round_num: int):
             print("  ==> Tạp chí Y học Cộng đồng completely exhausted and collected!", flush=True)
             
     # 3. VMJ (Vietnam Medical Journal)
-    vmj_max = 9500  # Expand VMJ target to 9,500 records in Round 4
-    tot, nc, done = harvest_oai_journal(con, "Tạp chí Y học Việt Nam", "https://tapchiyhocvietnam.vn/index.php/vmj/oai", "VMJ", run_id, max_records=vmj_max)
-    total_new += nc
-    state["vmj_max_records"] = vmj_max
-    if done:
-        state["vmj_completed"] = True
-        print("  ==> Tạp chí Y học Việt Nam completely exhausted and collected!", flush=True)
+    if not state.get("vmj_completed", False):
+        vmj_max = 9500 + (round_num - 4) * 4500
+        tot, nc, done = harvest_oai_journal(con, "Tạp chí Y học Việt Nam", "https://tapchiyhocvietnam.vn/index.php/vmj/oai", "VMJ", run_id, max_records=vmj_max)
+        total_new += nc
+        state["vmj_max_records"] = vmj_max
+        if done:
+            state["vmj_completed"] = True
+            print("  ==> Tạp chí Y học Việt Nam completely exhausted and collected!", flush=True)
         
     # 4. Dieutri.vn
     dt_target = state.get("dieutri_target_per_round", 1500)
