@@ -533,107 +533,79 @@ def execute_round(round_num: int):
     tot, nc = harvest_nih_round(con, run_id, round_num=round_num)
     total_new += nc
     
-    # 6. World-Class Medical Journals & Specialty Canon (Dynamic Marathon Pool)
-    round_offset = max(0, round_num - 10)
-    p_offset = state.get("pubmed_top_journals_retstart", 8500) + round_offset * 1500
-    s_offset_est = 3500 + round_offset * 1500
-    t_offset = 1500 + round_offset * 1500
-    n_offset = round_offset * 1000
+    # 6. Chronological Marathon Harvest (1990 to Present - Exhaustive Landmark Sweep)
+    ERAS = [
+        ("1990:1994", "Era 1 (1990 - 1994): Early 1990s Landmark Medical Canon"),
+        ("1995:1999", "Era 2 (1995 - 1999): Late 1990s Evidence-Based Medicine & Trials"),
+        ("2000:2004", "Era 3 (2000 - 2004): Genomic & Targeted Therapy Revolution"),
+        ("2005:2009", "Era 4 (2005 - 2009): Multi-Center Trials & Clinical Guidelines"),
+        ("2010:2014", "Era 5 (2010 - 2014): Immunotherapy & Molecular Medicine"),
+        ("2015:2019", "Era 6 (2015 - 2019): Precision Medicine & Early AI"),
+        ("2020:2024", "Era 7 (2020 - 2024): Pandemic Response, mRNA & Modern Multi-Omics"),
+        ("2025:2027", "Era 8 (2025 - 2027): Frontier Clinical AI & Contemporary Trials"),
+    ]
+    
+    # Map round_num (starting at 14) to an era
+    era_idx = (round_num - 14) % len(ERAS)
+    cycle_num = (round_num - 14) // len(ERAS)
+    era_range, era_title = ERAS[era_idx]
+    offset_shift = cycle_num * 1000
+    print(f"\n{'='*65}", flush=True)
+    print(f">>> ROUND {round_num}: {era_title} <<<", flush=True)
+    print(f">>> Date Range: {era_range}[pdat] | Cycle: {cycle_num + 1} | Offset: {offset_shift} <<<", flush=True)
+    print(f"{'='*65}\n", flush=True)
 
     top_journals = [
-        # Top 8 General Medical Journals
-        (f"The New England Journal of Medicine (NEJM) - Round {round_num}", '"N Engl J Med"[Journal]', 1500, p_offset),
-        (f"The Lancet - Round {round_num}", '"Lancet"[Journal]', 1500, p_offset),
-        (f"JAMA - Round {round_num}", '"JAMA"[Journal]', 1500, p_offset),
-        (f"The BMJ - Round {round_num}", '"BMJ"[Journal]', 1500, p_offset),
-        (f"Annals of Internal Medicine - Round {round_num}", '"Ann Intern Med"[Journal]', 1500, p_offset),
-        (f"JAMA Internal Medicine - Round {round_num}", '"JAMA Intern Med"[Journal]', 1000, p_offset),
-        (f"Nature Medicine - Round {round_num}", '"Nat Med"[Journal]', 1500, 4000 + round_offset * 1500),
-        (f"The Lancet Oncology - Round {round_num}", '"Lancet Oncol"[Journal]', 1500, 4000 + round_offset * 1500),
+        # Core 5 General Medical Journals
+        (f"NEJM ({era_range})", f'"N Engl J Med"[Journal] AND {era_range}[pdat]', 1000, offset_shift),
+        (f"The Lancet ({era_range})", f'"Lancet"[Journal] AND {era_range}[pdat]', 1000, offset_shift),
+        (f"JAMA ({era_range})", f'"JAMA"[Journal] AND {era_range}[pdat]', 1000, offset_shift),
+        (f"The BMJ ({era_range})", f'"BMJ"[Journal] AND {era_range}[pdat]', 1000, offset_shift),
+        (f"Annals of Internal Medicine ({era_range})", f'"Ann Intern Med"[Journal] AND {era_range}[pdat]', 1000, offset_shift),
 
-        # World-Leading Specialty Journals (AHA, ASCO, ASH, AGA, Cell Press, ESC, ADA)
-        (f"Circulation (AHA #1) - Round {round_num}", '"Circulation"[Journal]', 1500, s_offset_est),
-        (f"JACC (Clinical Cardiology) - Round {round_num}", '"J Am Coll Cardiol"[Journal]', 1500, s_offset_est),
-        (f"Journal of Clinical Oncology (JCO) - Round {round_num}", '"J Clin Oncol"[Journal]', 1500, s_offset_est),
-        (f"Blood (Hematology & Oncology) - Round {round_num}", '"Blood"[Journal]', 1500, s_offset_est),
-        (f"Gastroenterology (AGA) - Round {round_num}", '"Gastroenterology"[Journal]', 1500, s_offset_est),
-        (f"Cell (Biomedical Science) - Round {round_num}", '"Cell"[Journal]', 1500, s_offset_est),
-        (f"European Heart Journal (ESC) - Round {round_num}", '"Eur Heart J"[Journal]', 1500, 2500 + round_offset * 1500),
-        (f"Stroke (AHA) - Round {round_num}", '"Stroke"[Journal]', 1500, 2500 + round_offset * 1500),
-        (f"Diabetes Care (ADA) - Round {round_num}", '"Diabetes Care"[Journal]', 1500, 2500 + round_offset * 1500),
-        (f"Gut (BMJ/BSG) - Round {round_num}", '"Gut"[Journal]', 1500, 2500 + round_offset * 1500),
-        (f"Nature Biotechnology - Round {round_num}", '"Nat Biotechnol"[Journal]', 1500, 2500 + round_offset * 1500),
-        (f"Nature Genetics - Round {round_num}", '"Nat Genet"[Journal]', 1500, 2500 + round_offset * 1500),
-        (f"Immunity (Cell Press) - Round {round_num}", '"Immunity"[Journal]', 1200, 2000 + round_offset * 1200),
-        (f"Nature Immunology - Round {round_num}", '"Nat Immunol"[Journal]', 1200, 2000 + round_offset * 1200),
-        (f"The Lancet Psychiatry - Round {round_num}", '"Lancet Psychiatry"[Journal]', 1200, 2000 + round_offset * 1200),
-        (f"The Lancet Infectious Diseases - Round {round_num}", '"Lancet Infect Dis"[Journal]', 1200, 3000 + round_offset * 1200),
-        (f"The Lancet Neurology - Round {round_num}", '"Lancet Neurol"[Journal]', 1200, 3000 + round_offset * 1200),
-        (f"Science Translational Medicine - Round {round_num}", '"Sci Transl Med"[Journal]', 1200, 3000 + round_offset * 1200),
-        (f"The Lancet Respiratory Medicine - Round {round_num}", '"Lancet Respir Med"[Journal]', 1200, 3000 + round_offset * 1200),
-
-        # Tier-1 Multi-Disciplinary & Clinical Subspecialty Journals
-        (f"Nature (Biomedical Research) - Round {round_num}", '"Nature"[Journal]', 1500, t_offset),
-        (f"Science (Biomedical Science) - Round {round_num}", '"Science"[Journal]', 1500, t_offset),
-        (f"The Lancet Global Health - Round {round_num}", '"Lancet Glob Health"[Journal]', 1000, 1000 + round_offset * 1000),
-        (f"The Lancet Digital Health - Round {round_num}", '"Lancet Digit Health"[Journal]', 800, 800 + round_offset * 800),
-        (f"The Lancet Diabetes & Endocrinology - Round {round_num}", '"Lancet Diabetes Endocrinol"[Journal]', 1000, 1000 + round_offset * 1000),
-        (f"Hepatology (AASLD) - Round {round_num}", '"Hepatology"[Journal]', 1200, 1200 + round_offset * 1200),
-        (f"Chest (Pulmonary & Critical Care) - Round {round_num}", '"Chest"[Journal]', 1200, 1200 + round_offset * 1200),
-        (f"Radiology (RSNA) - Round {round_num}", '"Radiology"[Journal]', 1200, 1200 + round_offset * 1200),
-        (f"Pediatrics (AAP) - Round {round_num}", '"Pediatrics"[Journal]', 1200, 1200 + round_offset * 1200),
-        (f"American Journal of Respiratory and Critical Care Medicine - Round {round_num}", '"Am J Respir Crit Care Med"[Journal]', 1200, 1200 + round_offset * 1200),
-        (f"Kidney International (ISN) - Round {round_num}", '"Kidney Int"[Journal]', 1200, 1200 + round_offset * 1200),
-
-        # 20 New World-Renowned Medical Journals Added for Marathon
-        (f"JAMA Oncology - Round {round_num}", '"JAMA Oncol"[Journal]', 1000, n_offset),
-        (f"JAMA Cardiology - Round {round_num}", '"JAMA Cardiol"[Journal]', 1000, n_offset),
-        (f"JAMA Neurology - Round {round_num}", '"JAMA Neurol"[Journal]', 1000, n_offset),
-        (f"JAMA Pediatrics - Round {round_num}", '"JAMA Pediatr"[Journal]', 1000, n_offset),
-        (f"The Lancet Haematology - Round {round_num}", '"Lancet Haematol"[Journal]', 1000, n_offset),
-        (f"The Lancet Gastroenterology & Hepatology - Round {round_num}", '"Lancet Gastroenterol Hepatol"[Journal]', 1000, n_offset),
-        (f"The Lancet Rheumatology - Round {round_num}", '"Lancet Rheumatol"[Journal]', 1000, n_offset),
-        (f"Nature Reviews Clinical Oncology - Round {round_num}", '"Nat Rev Clin Oncol"[Journal]', 800, round_offset * 800),
-        (f"Nature Reviews Immunology - Round {round_num}", '"Nat Rev Immunol"[Journal]', 800, round_offset * 800),
-        (f"Nature Reviews Cardiology - Round {round_num}", '"Nat Rev Cardiol"[Journal]', 800, round_offset * 800),
-        (f"Nature Reviews Neurology - Round {round_num}", '"Nat Rev Neurol"[Journal]', 800, round_offset * 800),
-        (f"Cancer Discovery (AACR) - Round {round_num}", '"Cancer Discov"[Journal]', 1000, n_offset),
-        (f"Neuro-Oncology - Round {round_num}", '"Neuro Oncol"[Journal]', 1000, n_offset),
-        (f"Annals of Oncology (ESMO) - Round {round_num}", '"Ann Oncol"[Journal]', 1000, n_offset),
-        (f"Clinical Infectious Diseases (IDSA) - Round {round_num}", '"Clin Infect Dis"[Journal]', 1000, n_offset),
-        (f"Arthritis & Rheumatology (ACR) - Round {round_num}", '"Arthritis Rheumatol"[Journal]', 1000, n_offset),
-        (f"Critical Care Medicine (SCCM) - Round {round_num}", '"Crit Care Med"[Journal]', 1000, n_offset),
-        (f"Journal of Hepatology (EASL) - Round {round_num}", '"J Hepatol"[Journal]', 1000, n_offset),
-        (f"Endocrine Reviews - Round {round_num}", '"Endocr Rev"[Journal]', 800, round_offset * 800),
-        (f"American Journal of Clinical Pathology - Round {round_num}", '"Am J Clin Pathol"[Journal]', 1000, n_offset),
+        # World-Leading Specialty Medical Journals
+        (f"Circulation ({era_range})", f'"Circulation"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"JACC ({era_range})", f'"J Am Coll Cardiol"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Journal of Clinical Oncology ({era_range})", f'"J Clin Oncol"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Blood ({era_range})", f'"Blood"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Gastroenterology ({era_range})", f'"Gastroenterology"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Cell ({era_range})", f'"Cell"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Stroke ({era_range})", f'"Stroke"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Diabetes Care ({era_range})", f'"Diabetes Care"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Gut ({era_range})", f'"Gut"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"European Heart Journal ({era_range})", f'"Eur Heart J"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Nature (Biomedical) ({era_range})", f'"Nature"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Science (Biomedical) ({era_range})", f'"Science"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Chest ({era_range})", f'"Chest"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Radiology ({era_range})", f'"Radiology"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Pediatrics ({era_range})", f'"Pediatrics"[Journal] AND {era_range}[pdat]', 800, offset_shift),
+        (f"Kidney International ({era_range})", f'"Kidney Int"[Journal] AND {era_range}[pdat]', 800, offset_shift),
     ]
     for label, q, limit, offset in top_journals:
         tot, nc = harvest_pubmed_batch(con, label, q, run_id, max_items=limit, retstart=offset)
         total_new += nc
-    state["pubmed_top_journals_retstart"] = p_offset + 1500
 
-    # 7. Ten Clinical Specialties High-Impact Queries (Expanded to 1,500 each)
-    sp_offset = 2500 + round_offset * 1500
+    # 7. Ten Clinical Specialties in that Era (Randomized Controlled Trials & Practice Guidelines)
+    trial_filter = '("randomized controlled trial"[pt] OR "clinical trial"[pt] OR "systematic review"[pt] OR "practice guideline"[pt])'
     specialty_batch = [
-        ("Surgery / Ngoại khoa (High-Impact)", '(surgery[MeSH] OR "surgical procedures"[Title/Abstract]) AND ("randomized controlled trial"[pt] OR "systematic review"[pt]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Cancer / Ung thư lâm sàng (High-Impact)", '(neoplasms[MeSH] OR "cancer immunotherapy"[Title/Abstract]) AND ("clinical trial"[pt] OR "systematic review"[pt]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Genetics / Di truyền học y khoa (High-Impact)", '(genomics[MeSH] OR "gene therapy"[Title/Abstract] OR "whole genome sequencing"[Title/Abstract]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Pharmacology / Dược lý lâm sàng (High-Impact)", '(pharmacovigilance[Title/Abstract] OR "drug safety"[Title/Abstract] OR "adverse drug reaction"[MeSH]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Immunology / Miễn dịch học (High-Impact)", '(immunotherapy[MeSH] OR "CAR-T"[Title/Abstract] OR "monoclonal antibody"[Title/Abstract]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Laboratory diagnostics / Xét nghiệm (High-Impact)", '(biomarkers[MeSH] OR "diagnostic accuracy"[Title/Abstract] OR "liquid biopsy"[Title/Abstract]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Internal medicine / Nội khoa (High-Impact)", '("practice guideline"[pt] OR "clinical decision support"[Title/Abstract] OR "chronic disease"[Title/Abstract]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Computational biology / AI Y khoa (High-Impact)", '("deep learning"[Title/Abstract] OR "artificial intelligence"[MeSH] OR "machine learning"[Title/Abstract]) AND (diagnosis[Title/Abstract] OR medicine[Title/Abstract]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Pathology / Bệnh học (High-Impact)", '("digital pathology"[Title/Abstract] OR "molecular pathology"[Title/Abstract] OR histopathology[MeSH]) AND 2020:2027[pdat]', 1500, sp_offset),
-        ("Anatomy / Giải phẫu học (High-Impact)", '("surgical anatomy"[Title/Abstract] OR "3D reconstruction"[Title/Abstract] OR "organ transplantation"[MeSH]) AND 2020:2027[pdat]', 1500, sp_offset),
+        (f"Surgery ({era_range})", f'(surgery[MeSH] OR "surgical procedures"[Title/Abstract]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Cancer ({era_range})", f'(neoplasms[MeSH] OR cancer[Title/Abstract]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Genetics ({era_range})", f'(genomics[MeSH] OR genetics[MeSH] OR "gene expression"[Title/Abstract]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Pharmacology ({era_range})", f'(pharmacovigilance[Title/Abstract] OR "clinical pharmacology"[Title/Abstract] OR "drug safety"[Title/Abstract] OR "adverse drug reaction"[MeSH]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Immunology ({era_range})", f'(immunology[MeSH] OR immunotherapy[MeSH] OR antibodies[MeSH]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Laboratory Diagnostics ({era_range})", f'(biomarkers[MeSH] OR "diagnostic accuracy"[Title/Abstract] OR "clinical laboratory techniques"[MeSH]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Internal Medicine ({era_range})", f'("internal medicine"[Title/Abstract] OR "chronic disease"[Title/Abstract] OR "clinical decision support"[Title/Abstract]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Computational Biology / AI ({era_range})", f'("medical informatics"[MeSH] OR "computational biology"[MeSH] OR "biostatistics"[MeSH] OR "machine learning"[Title/Abstract] OR "computer"[Title/Abstract]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Pathology ({era_range})", f'(pathology[MeSH] OR histopathology[MeSH] OR biopsy[MeSH]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
+        (f"Anatomy ({era_range})", f'(anatomy[MeSH] OR "surgical anatomy"[Title/Abstract] OR "organ transplantation"[MeSH]) AND {trial_filter} AND {era_range}[pdat]', 1500, offset_shift),
     ]
     for label, q, limit, offset in specialty_batch:
         tot, nc = harvest_pubmed_batch(con, label, q, run_id, max_items=limit, retstart=offset)
         total_new += nc
 
-    # 8. Vietnamese Medical Research & Major Hospitals (Round Marathon Enhanced)
+    # 8. Vietnamese Medical Research in that Era
     vn_queries = [
-        (f"Vietnam Biomedical & Clinical Research 2020-2027 (Round {round_num})", '("Vietnam"[Affiliation] OR "Viet Nam"[Affiliation]) AND 2020:2027[pdat]', 2000, round_offset * 2000),
-        (f"Hanoi Medical University Studies (Round {round_num})", '("Hanoi Medical University"[Affiliation])', 400, 2950 + round_offset * 300),
+        (f"Vietnam Medical Research ({era_range})", f'("Vietnam"[Affiliation] OR "Viet Nam"[Affiliation]) AND {era_range}[pdat]', 2000, offset_shift),
     ]
     for label, q, limit, offset in vn_queries:
         tot, nc = harvest_pubmed_batch(con, label, q, run_id, max_items=limit, retstart=offset)
