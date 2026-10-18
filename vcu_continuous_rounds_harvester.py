@@ -529,6 +529,8 @@ def execute_round(round_num: int):
         (f"The BMJ - Round {round_num}", '"BMJ"[Journal]', 500, p_offset),
         (f"Annals of Internal Medicine - Round {round_num}", '"Ann Intern Med"[Journal]', 500, p_offset),
         (f"JAMA Internal Medicine - Round {round_num}", '"JAMA Intern Med"[Journal]', 500, p_offset),
+        (f"Nature Medicine - Round {round_num}", '"Nat Med"[Journal]', 500, 0 if round_num == 6 else p_offset),
+        (f"The Lancet Oncology - Round {round_num}", '"Lancet Oncol"[Journal]', 500, 0 if round_num == 6 else p_offset),
     ]
     for label, q, limit, offset in top_journals:
         tot, nc = harvest_pubmed_batch(con, label, q, run_id, max_items=limit, retstart=offset)
