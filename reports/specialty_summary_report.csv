@@ -1,11 +1,11 @@
-stt,chuyen_nganh,ten_tieng_anh,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid,ty_le_co_mesh,ty_le_co_abstract,ghi_chu
-1,Ngoại khoa,Surgery,10497,88.0%,10.6%,100.0%,66.2%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-2,Ung thư,Cancer,10482,92.5%,25.3%,93.5%,75.1%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-3,Xét nghiệm chẩn đoán,Laboratory diagnostics,10415,87.1%,22.5%,95.4%,68.3%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-4,Giải phẫu học,Anatomy,10407,89.6%,24.2%,89.1%,75.1%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-5,Miễn dịch học,Immunology,10388,89.9%,34.1%,88.5%,73.6%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-6,Nội khoa,Internal medicine,10247,87.9%,28.2%,92.0%,69.7%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-7,Bệnh học,Pathology,9960,85.6%,24.6%,90.2%,70.9%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-8,Dược lý học,Pharmacology,9868,90.3%,22.6%,95.0%,68.7%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-9,Sinh học tính toán,Computational biology,8305,96.0%,39.0%,89.6%,71.3%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
-10,Di truyền học,Genetics,7843,95.9%,41.0%,85.2%,70.8%,Quét sâu đa tầng 1990-2026 kèm đợt 2020-2024
+﻿stt,chuyen_nganh,ten_tieng_anh,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid,ty_le_co_mesh,ty_le_co_abstract,ghi_chu
+1,Ung thư,Cancer,14406,94.5%,25.6%,94.1%,81.4%,Quét sâu toàn diện 1990-2024 không bỏ sót
+2,Xét nghiệm chẩn đoán,Laboratory diagnostics,14377,90.6%,24.7%,94.9%,76.9%,Quét sâu toàn diện 1990-2024 không bỏ sót
+3,Miễn dịch học,Immunology,14362,92.6%,38.3%,86.9%,80.9%,Quét sâu toàn diện 1990-2024 không bỏ sót
+4,Giải phẫu học,Anatomy,14328,92.4%,26.2%,88.8%,81.9%,Quét sâu toàn diện 1990-2024 không bỏ sót
+5,Ngoại khoa,Surgery,14305,91.2%,12.3%,100.0%,75.4%,Quét sâu toàn diện 1990-2024 không bỏ sót
+6,Nội khoa,Internal medicine,14184,91.2%,31.5%,91.4%,77.8%,Quét sâu toàn diện 1990-2024 không bỏ sót
+7,Sinh học tính toán,Computational biology,12109,97.1%,45.2%,86.5%,80.8%,Quét sâu toàn diện 1990-2024 không bỏ sót
+8,Dược lý học,Pharmacology,11977,91.9%,25.7%,94.4%,76.3%,Quét sâu toàn diện 1990-2024 không bỏ sót
+9,Bệnh học,Pathology,11878,87.7%,28.5%,88.8%,77.5%,Quét sâu toàn diện 1990-2024 không bỏ sót
+10,Di truyền học,Genetics,11626,97.0%,46.1%,82.5%,80.5%,Quét sâu toàn diện 1990-2024 không bỏ sót
