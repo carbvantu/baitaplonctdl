@@ -9,6 +9,12 @@ __pycache__/
 *.sqlite.tmp
 *.tmp
 
+# Uncompressed large data files exceeding GitHub 100MB limit
+# (Full datasets are tracked as compressed .zip archives under 50MB)
+library_data/vcu_biomedical_library.sqlite
+library_data/metadata_pubmed.csv
+library_data/metadata_pubmed.jsonl
+
 # Environments
 .venv/
 env/

@@ -1,11 +1,11 @@
-stt,chuyen_nganh,ten_tieng_anh,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid,ty_le_co_mesh,ghi_chu
-1,Ngoại khoa,Surgery,5497,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-2,Ung thư,Cancer,5488,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-3,Bệnh học,Pathology,5482,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-4,Dược lý học,Pharmacology,5479,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-5,Xét nghiệm chẩn đoán,Laboratory diagnostics,5462,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-6,Giải phẫu học,Anatomy,5451,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-7,Miễn dịch học,Immunology,5439,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-8,Nội khoa,Internal medicine,5357,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-9,Sinh học tính toán,Computational biology,4610,92.1%,26.4%,91.6%,Toàn diện 1990-2026
-10,Di truyền học,Genetics,3977,92.1%,26.4%,91.6%,Toàn diện 1990-2026
+stt,chuyen_nganh,ten_tieng_anh,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid,ty_le_co_mesh,ty_le_co_abstract,ghi_chu
+1,Ngoại khoa,Surgery,9497,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+2,Ung thư,Cancer,9482,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+3,Xét nghiệm chẩn đoán,Laboratory diagnostics,9416,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+4,Giải phẫu học,Anatomy,9408,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+5,Miễn dịch học,Immunology,9390,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+6,Nội khoa,Internal medicine,9255,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+7,Bệnh học,Pathology,8962,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+8,Dược lý học,Pharmacology,8870,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+9,Sinh học tính toán,Computational biology,7321,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026
+10,Di truyền học,Genetics,6883,88.8%,24.1%,93.1%,67.3%,Quét sâu đa tầng 1990-2026

@@ -211,14 +211,15 @@ def main():
     ap.add_argument("--batch-size", type=int, default=100, help="EFetch size; 100 is conservative")
     ap.add_argument("--date-from", default="", help="Optional publication date YYYY/MM/DD")
     ap.add_argument("--date-to", default="", help="Optional publication date YYYY/MM/DD")
+    ap.add_argument("--retstart", type=int, default=0, help="Offset in search results to start fetching from (default 0)")
     ap.add_argument("--no-abstracts", action="store_true", help="Store metadata only; recommended for a redistributable catalog")
     ap.add_argument("--seed-only", action="store_true", help="Initialize local database from seed_records.csv without network requests")
     args = ap.parse_args()
     if not args.email and not args.seed_only:
         print("ERROR: Provide --email or set NCBI_EMAIL before live collection. For a metadata-only local initialization, use --seed-only.", file=sys.stderr)
         return 2
-    if args.max_per_topic < 1 or args.batch_size < 1:
-        print("ERROR: --max-per-topic and --batch-size must be positive.", file=sys.stderr); return 2
+    if args.max_per_topic < 1 or args.batch_size < 1 or args.retstart < 0:
+        print("ERROR: --max-per-topic and --batch-size must be positive, --retstart must be non-negative.", file=sys.stderr); return 2
     outdir = Path(args.out); outdir.mkdir(parents=True, exist_ok=True)
     run_id = datetime.now(timezone.utc).strftime("vcu_%Y%m%dT%H%M%SZ")
     dbpath = outdir / "vcu_biomedical_library.sqlite"
@@ -254,7 +255,7 @@ def main():
                 term = f'({term}) AND ("{args.date_from}"[Date - Publication] : "{args.date_to}"[Date - Publication])'
             elif args.date_from:
                 term = f'({term}) AND ("{args.date_from}"[Date - Publication] : "3000"[Date - Publication])'
-            params = dict(common); params.update({"term": term, "retmax": args.max_per_topic, "retstart": 0, "sort": "pub date"})
+            params = dict(common); params.update({"term": term, "retmax": args.max_per_topic, "retstart": args.retstart, "sort": "pub date"})
             try:
                 body = request(BASE + "esearch.fcgi", params, 0.36 if not args.api_key else 0.15, user_agent)
                 result = json.loads(body.decode("utf-8"))["esearchresult"]
