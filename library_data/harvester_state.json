@@ -1,10 +1,10 @@
 {
-  "current_round": 12,
+  "current_round": 13,
   "vmj_max_records": 18500,
   "tcncyh_completed": true,
   "yhcd_completed": true,
   "dieutri_target_per_round": 1500,
-  "pubmed_top_journals_retstart": 13000,
+  "pubmed_top_journals_retstart": 17500,
   "history": [
     {
       "round": 1,
@@ -71,6 +71,12 @@
       "new_records": 70012,
       "total_records": 477933,
       "timestamp": "2026-10-18T22:12:35+07:00"
+    },
+    {
+      "round": 12,
+      "new_records": 65101,
+      "total_records": 543034,
+      "timestamp": "2026-10-18T22:58:37+07:00"
     }
   ],
   "vmj_completed": true
