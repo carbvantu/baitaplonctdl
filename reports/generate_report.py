@@ -43,6 +43,20 @@ def main():
     with_mesh = con.execute("SELECT COUNT(*) FROM records WHERE mesh_terms_json IS NOT NULL AND mesh_terms_json != '[]'").fetchone()[0]
     with_abs = con.execute("SELECT COUNT(*) FROM records WHERE abstract IS NOT NULL AND length(abstract) > 0").fetchone()[0]
 
+    # Prestigious Journals Stats
+    prestigious_names = [
+        ("The Lancet", "%Lancet%"),
+        ("The New England Journal of Medicine (NEJM)", "%New England journal of medicine%"),
+        ("The BMJ (British Medical Journal)", "%BMJ%"),
+        ("JAMA", "%JAMA%"),
+        ("Annals of Internal Medicine", "%Annals of internal medicine%"),
+        ("Dieutri.vn (Phác đồ & Y học Việt Nam)", "%Dieutri.vn%")
+    ]
+    p_stats = []
+    for label, pat in prestigious_names:
+        row = con.execute("SELECT COUNT(*), SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END) FROM records WHERE journal LIKE ?", (pat,)).fetchone()
+        p_stats.append((label, row[0], row[1]))
+
     # Stats for 2024 to present
     c_2024_now = con.execute("""
         SELECT COUNT(*), 
@@ -76,7 +90,7 @@ def main():
     """).fetchall()
 
     journals = con.execute(
-        "SELECT journal, COUNT(*) FROM records WHERE journal != '' GROUP BY journal ORDER BY COUNT(*) DESC LIMIT 10"
+        "SELECT journal, COUNT(*) FROM records WHERE journal != '' GROUP BY journal ORDER BY COUNT(*) DESC LIMIT 15"
     ).fetchall()
 
     years = con.execute(
@@ -102,7 +116,18 @@ def main():
 
 ---
 
-## 2. Thống Kê Riêng Giai Đoạn 2024 Đến Nay (2024 – 2027)
+## 2. Các Tạp Chí Y Khoa Hàng Đầu Quốc Tế & Cơ Sở Dữ Liệu Việt Nam
+| Tạp chí / Nguồn y học | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract | Ghi chú chất lượng |
+|:---|:---:|:---:|:---:|:---|
+"""
+    for j_label, j_cnt, j_abs in p_stats:
+        rate = j_abs / j_cnt * 100 if j_cnt > 0 else 0
+        md_content += f"| **{j_label}** | {j_cnt:,} | {j_abs:,} | {rate:.1f}% | Nghiên cứu y học lâm sàng đỉnh cao |\n"
+
+    md_content += f"""
+---
+
+## 3. Thống Kê Riêng Giai Đoạn 2024 Đến Nay (2024 – 2027)
 - **Tổng số bài giai đoạn 2024 đến nay:** {c_2024_now[0]:,} bài
 - **Bài có Full Abstract (tóm tắt gốc tác giả):** {c_2024_now[1]:,} ({c_2024_now[1]/c_2024_now[0]*100:.1f}%)
 - **Bài có mã DOI:** {c_2024_now[2]:,} ({c_2024_now[2]/c_2024_now[0]*100:.1f}%)
@@ -110,7 +135,7 @@ def main():
 
 ---
 
-## 3. Thống Kê Giai Đoạn 2020 – 2024
+## 4. Thống Kê Giai Đoạn 2020 – 2024
 - **Tổng số bài giai đoạn 2020 – 2024:** {c_2020_2024[0]:,} bài
 - **Bài có Full Abstract:** {c_2020_2024[1]:,} ({c_2020_2024[1]/c_2020_2024[0]*100:.1f}%)
 - **Bài có mã DOI:** {c_2020_2024[2]:,} ({c_2020_2024[2]/c_2020_2024[0]*100:.1f}%)
@@ -118,7 +143,7 @@ def main():
 
 ---
 
-## 4. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
+## 5. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
 | STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
 """
@@ -126,11 +151,11 @@ def main():
         vi_name = SPEC_VI_MAP.get(spec, spec)
         md_content += f"| {i} | **{vi_name}** | *{spec}* | {cnt:,} | {p_doi:.1f}% | {p_pmc:.1f}% | {p_mesh:.1f}% | {p_abs:.1f}% |\n"
 
-    md_content += "\n---\n\n## 5. Top 10 Tạp Chí Xuất Bản Uy Tín\n| STT | Tạp chí | Số lượng bài |\n|:---:|:---|:---:|\n"
+    md_content += "\n---\n\n## 6. Top 15 Tạp Chí Xuất Bản Uy Tín\n| STT | Tạp chí | Số lượng bài |\n|:---:|:---|:---:|\n"
     for i, (jnl, cnt) in enumerate(journals, 1):
         md_content += f"| {i} | *{jnl}* | {cnt:,} |\n"
 
-    md_content += "\n---\n\n## 6. Phân Bố Theo Năm Xuất Bản (1990 – 2027)\n| Năm | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract |\n|:---:|:---:|:---:|:---:|\n"
+    md_content += "\n---\n\n## 7. Phân Bố Theo Năm Xuất Bản (1990 – 2027)\n| Năm | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract |\n|:---:|:---:|:---:|:---:|\n"
     for yr, cnt, abs_cnt in years:
         if yr and yr.isdigit() and int(yr) >= 1990:
             rate = abs_cnt / cnt * 100 if cnt > 0 else 0
