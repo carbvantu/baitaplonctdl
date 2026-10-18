@@ -1,11 +1,11 @@
 ﻿stt,chuyen_nganh,ten_tieng_anh,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid,ty_le_co_mesh,ty_le_co_abstract,ghi_chu
-1,Ung thư,Cancer,14406,94.5%,25.6%,94.1%,81.4%,Quét sâu toàn diện 1990-2024 không bỏ sót
-2,Xét nghiệm chẩn đoán,Laboratory diagnostics,14377,90.6%,24.7%,94.9%,76.9%,Quét sâu toàn diện 1990-2024 không bỏ sót
-3,Miễn dịch học,Immunology,14362,92.6%,38.3%,86.9%,80.9%,Quét sâu toàn diện 1990-2024 không bỏ sót
-4,Giải phẫu học,Anatomy,14328,92.4%,26.2%,88.8%,81.9%,Quét sâu toàn diện 1990-2024 không bỏ sót
-5,Ngoại khoa,Surgery,14305,91.2%,12.3%,100.0%,75.4%,Quét sâu toàn diện 1990-2024 không bỏ sót
-6,Nội khoa,Internal medicine,14184,91.2%,31.5%,91.4%,77.8%,Quét sâu toàn diện 1990-2024 không bỏ sót
-7,Sinh học tính toán,Computational biology,12109,97.1%,45.2%,86.5%,80.8%,Quét sâu toàn diện 1990-2024 không bỏ sót
-8,Dược lý học,Pharmacology,11977,91.9%,25.7%,94.4%,76.3%,Quét sâu toàn diện 1990-2024 không bỏ sót
-9,Bệnh học,Pathology,11878,87.7%,28.5%,88.8%,77.5%,Quét sâu toàn diện 1990-2024 không bỏ sót
-10,Di truyền học,Genetics,11626,97.0%,46.1%,82.5%,80.5%,Quét sâu toàn diện 1990-2024 không bỏ sót
+1,Ung thư,Cancer,16870,95.3%,27.3%,91.8%,91.7%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+2,Xét nghiệm chẩn đoán,Laboratory diagnostics,16851,92.0%,25.4%,91.8%,88.6%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+3,Miễn dịch học,Immunology,16849,93.7%,39.7%,84.7%,91.9%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+4,Giải phẫu học,Anatomy,16769,93.5%,28.2%,85.8%,92.6%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+5,Ngoại khoa,Surgery,16727,92.4%,14.2%,100.0%,87.0%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+6,Nội khoa,Internal medicine,16634,92.4%,33.9%,87.9%,89.5%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+7,Sinh học tính toán,Computational biology,14573,97.6%,46.6%,83.0%,93.5%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+8,Di truyền học,Genetics,13984,97.4%,47.6%,80.5%,93.3%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+9,Bệnh học,Pathology,13480,89.1%,31.5%,87.0%,89.7%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay
+10,Dược lý học,Pharmacology,13479,92.7%,28.1%,93.2%,88.6%,Quét sâu toàn diện 1990-2027 kèm 2024 đến nay

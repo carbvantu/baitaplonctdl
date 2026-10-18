@@ -17,16 +17,16 @@ ROOT = HERE.parent
 DB_PATH = ROOT / "library_data" / "vcu_biomedical_library.sqlite"
 
 SPEC_VI_MAP = {
-    "Surgery": "Ngoại khoa",
     "Cancer": "Ung thư",
     "Laboratory diagnostics": "Xét nghiệm chẩn đoán",
-    "Anatomy": "Giải phẫu học",
     "Immunology": "Miễn dịch học",
+    "Anatomy": "Giải phẫu học",
+    "Surgery": "Ngoại khoa",
     "Internal medicine": "Nội khoa",
-    "Pathology": "Bệnh học",
-    "Pharmacology": "Dược lý học",
     "Computational biology": "Sinh học tính toán",
     "Genetics": "Di truyền học",
+    "Pathology": "Bệnh học",
+    "Pharmacology": "Dược lý học",
     "Computational pathology": "Bệnh học tính toán (Seed)",
     "Clinical AI / imaging": "Trí tuệ nhân tạo lâm sàng (Seed)",
 }
@@ -43,7 +43,17 @@ def main():
     with_mesh = con.execute("SELECT COUNT(*) FROM records WHERE mesh_terms_json IS NOT NULL AND mesh_terms_json != '[]'").fetchone()[0]
     with_abs = con.execute("SELECT COUNT(*) FROM records WHERE abstract IS NOT NULL AND length(abstract) > 0").fetchone()[0]
 
-    # Specific stats for 2020-2024
+    # Stats for 2024 to present
+    c_2024_now = con.execute("""
+        SELECT COUNT(*), 
+               SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END),
+               SUM(CASE WHEN doi IS NOT NULL AND doi != '' THEN 1 ELSE 0 END),
+               SUM(CASE WHEN pmcid IS NOT NULL AND pmcid != '' THEN 1 ELSE 0 END)
+        FROM records 
+        WHERE SUBSTR(publication_date, 1, 4) IN ('2024', '2025', '2026', '2027')
+    """).fetchone()
+
+    # Stats for 2020 - 2024
     c_2020_2024 = con.execute("""
         SELECT COUNT(*), 
                SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END),
@@ -92,15 +102,23 @@ def main():
 
 ---
 
-## 2. Thống Kê Riêng Giai Đoạn 2020 – 2024
+## 2. Thống Kê Riêng Giai Đoạn 2024 Đến Nay (2024 – 2027)
+- **Tổng số bài giai đoạn 2024 đến nay:** {c_2024_now[0]:,} bài
+- **Bài có Full Abstract (tóm tắt gốc tác giả):** {c_2024_now[1]:,} ({c_2024_now[1]/c_2024_now[0]*100:.1f}%)
+- **Bài có mã DOI:** {c_2024_now[2]:,} ({c_2024_now[2]/c_2024_now[0]*100:.1f}%)
+- **Bài có PMCID:** {c_2024_now[3]:,} ({c_2024_now[3]/c_2024_now[0]*100:.1f}%)
+
+---
+
+## 3. Thống Kê Giai Đoạn 2020 – 2024
 - **Tổng số bài giai đoạn 2020 – 2024:** {c_2020_2024[0]:,} bài
-- **Bài có Full Abstract (tóm tắt gốc tác giả):** {c_2020_2024[1]:,} ({c_2020_2024[1]/c_2020_2024[0]*100:.1f}%)
+- **Bài có Full Abstract:** {c_2020_2024[1]:,} ({c_2020_2024[1]/c_2020_2024[0]*100:.1f}%)
 - **Bài có mã DOI:** {c_2020_2024[2]:,} ({c_2020_2024[2]/c_2020_2024[0]*100:.1f}%)
 - **Bài có PMCID:** {c_2020_2024[3]:,} ({c_2020_2024[3]/c_2020_2024[0]*100:.1f}%)
 
 ---
 
-## 3. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
+## 4. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
 | STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
 """
@@ -108,11 +126,11 @@ def main():
         vi_name = SPEC_VI_MAP.get(spec, spec)
         md_content += f"| {i} | **{vi_name}** | *{spec}* | {cnt:,} | {p_doi:.1f}% | {p_pmc:.1f}% | {p_mesh:.1f}% | {p_abs:.1f}% |\n"
 
-    md_content += "\n---\n\n## 4. Top 10 Tạp Chí Xuất Bản Uy Tín\n| STT | Tạp chí | Số lượng bài |\n|:---:|:---|:---:|\n"
+    md_content += "\n---\n\n## 5. Top 10 Tạp Chí Xuất Bản Uy Tín\n| STT | Tạp chí | Số lượng bài |\n|:---:|:---|:---:|\n"
     for i, (jnl, cnt) in enumerate(journals, 1):
         md_content += f"| {i} | *{jnl}* | {cnt:,} |\n"
 
-    md_content += "\n---\n\n## 5. Phân Bố Theo Năm Xuất Bản (1990 – 2027)\n| Năm | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract |\n|:---:|:---:|:---:|:---:|\n"
+    md_content += "\n---\n\n## 6. Phân Bố Theo Năm Xuất Bản (1990 – 2027)\n| Năm | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract |\n|:---:|:---:|:---:|:---:|\n"
     for yr, cnt, abs_cnt in years:
         if yr and yr.isdigit() and int(yr) >= 1990:
             rate = abs_cnt / cnt * 100 if cnt > 0 else 0

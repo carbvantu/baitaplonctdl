@@ -174,10 +174,14 @@ def upsert_record(con, rec, run_id):
     con.execute('''INSERT INTO records (pmid,pmcid,doi,title,authors_json,journal,publication_date,language_json,
       publication_types_json,mesh_terms_json,keywords_json,abstract,pubmed_url,source,fetched_at,first_seen_run,last_seen_run)
       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-      ON CONFLICT(pmid) DO UPDATE SET pmcid=excluded.pmcid, doi=excluded.doi, title=excluded.title,
+      ON CONFLICT(pmid) DO UPDATE SET 
+      pmcid=CASE WHEN excluded.pmcid != '' THEN excluded.pmcid ELSE records.pmcid END,
+      doi=CASE WHEN excluded.doi != '' THEN excluded.doi ELSE records.doi END,
+      title=excluded.title,
       authors_json=excluded.authors_json, journal=excluded.journal, publication_date=excluded.publication_date,
       language_json=excluded.language_json, publication_types_json=excluded.publication_types_json,
-      mesh_terms_json=excluded.mesh_terms_json, keywords_json=excluded.keywords_json, abstract=excluded.abstract,
+      mesh_terms_json=excluded.mesh_terms_json, keywords_json=excluded.keywords_json,
+      abstract=CASE WHEN excluded.abstract != '' THEN excluded.abstract ELSE records.abstract END,
       pubmed_url=excluded.pubmed_url, source=excluded.source, fetched_at=excluded.fetched_at, last_seen_run=excluded.last_seen_run''',
       (rec.get("pmid"), rec.get("pmcid"), rec.get("doi"), rec.get("title"), json.dumps(rec.get("authors", []), ensure_ascii=False),
        rec.get("journal"), rec.get("publication_date"), json.dumps(rec.get("language", []), ensure_ascii=False),
@@ -278,6 +282,8 @@ def main():
                     prior_tags = old_rec.get("matched_specialties", [])
                     if isinstance(prior_tags, str): prior_tags = [prior_tags]
                     rec["matched_specialties"] = sorted(set(prior_tags + rec.get("matched_specialties", [])))
+                    if not rec.get("abstract") and old_rec.get("abstract"):
+                        rec["abstract"] = old_rec["abstract"]
                     status = upsert_record(con, rec, run_id)
                     con.execute("INSERT INTO record_specialties VALUES (?,?,?,?) ON CONFLICT(pmid,specialty) DO UPDATE SET last_seen_run=excluded.last_seen_run", (str(rec["pmid"]), specialty, run_id, run_id))
                     if status == "new": new_count += 1
