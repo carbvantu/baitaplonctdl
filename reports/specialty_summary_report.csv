@@ -1,11 +1,11 @@
 ﻿stt,chuyen_nganh,ten_tieng_anh,tong_trong_csdl,ty_le_co_doi,ty_le_co_pmcid,ty_le_co_mesh,ty_le_co_abstract,ghi_chu
-1,Nội khoa,Internal medicine,24562,94.8%,26.5%,64.0%,65.1%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-2,Di truyền học,Genetics,19373,98.1%,46.4%,77.1%,91.6%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-3,Sinh học tính toán,Computational biology,18941,98.1%,45.2%,79.2%,91.8%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-4,Ung thư,Cancer,18847,95.8%,27.2%,87.3%,89.5%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-5,Xét nghiệm chẩn đoán,Laboratory diagnostics,18596,92.7%,27.0%,88.9%,89.1%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-6,Miễn dịch học,Immunology,18451,94.2%,38.9%,81.9%,90.8%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-7,Ngoại khoa,Surgery,18309,93.0%,16.0%,96.4%,86.5%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-8,Giải phẫu học,Anatomy,17107,93.6%,28.4%,84.8%,92.7%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-9,Dược lý học,Pharmacology,16447,94.0%,28.8%,87.9%,88.1%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
-10,Bệnh học,Pathology,14201,89.7%,31.5%,84.8%,90.1%,Đa nguồn: NEJM Lancet JAMA BMJ & Dieutri.vn
+1,Nội khoa,Internal medicine,26174,95.1%,25.4%,61.5%,61.7%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+2,Sinh học tính toán,Computational biology,25092,98.5%,37.5%,77.6%,92.4%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+3,Di truyền học,Genetics,22915,98.4%,41.7%,76.1%,91.8%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+4,Ngoại khoa,Surgery,21857,94.2%,14.4%,93.4%,88.4%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+5,Ung thư,Cancer,20463,96.1%,25.9%,84.7%,89.5%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+6,Xét nghiệm chẩn đoán,Laboratory diagnostics,20388,93.4%,25.7%,86.9%,90.0%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+7,Miễn dịch học,Immunology,19685,94.6%,37.0%,79.5%,90.9%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+8,Dược lý học,Pharmacology,18920,94.8%,26.4%,84.0%,89.0%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+9,Giải phẫu học,Anatomy,18556,94.1%,26.3%,81.6%,93.2%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"
+10,Bệnh học,Pathology,15071,90.2%,30.2%,82.8%,90.6%,"Đa nguồn: NEJM, Lancet, JAMA, BMJ, Annals, VMJ, YHCD, Dieutri.vn, NIH"

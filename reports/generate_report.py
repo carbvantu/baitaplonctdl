@@ -49,7 +49,11 @@ def main():
         ("The BMJ (British Medical Journal)", "%BMJ%"),
         ("JAMA & JAMA Internal Medicine", "%JAMA%"),
         ("Annals of Internal Medicine", "%Annals of internal medicine%"),
+        ("Tạp chí Y học Việt Nam (VMJ)", "%Tạp chí Y học Việt Nam%"),
+        ("Tạp chí Nghiên cứu Y học (TCNCYH)", "%Tạp chí Nghiên cứu Y học%"),
+        ("Tạp chí Y học Cộng đồng (YHCD)", "%Tạp chí Y học Cộng đồng%"),
         ("Dieutri.vn (Phác đồ & Y học lâm sàng Việt Nam)", "%Dieutri.vn%"),
+        ("NIH MedlinePlus (National Institutes of Health)", "%NIH MedlinePlus%"),
     ]
     p_stats = []
     for label, pat in prestigious_names:
