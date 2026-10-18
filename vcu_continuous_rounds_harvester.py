@@ -28,6 +28,7 @@ BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 HERE = Path(__file__).resolve().parent
 DATA_DIR = HERE / "library_data"
 DB_PATH = DATA_DIR / "vcu_biomedical_library.sqlite"
+STATE_FILE = DATA_DIR / "harvester_state.json"
 REPO_URL = "https://github.com/carbvantu/baitaplonctdl.git"
 TOKEN_FILE = HERE / ".git_token"
 PAT = os.environ.get("GITHUB_PAT", "")
@@ -494,16 +495,17 @@ def execute_round(round_num: int):
             
     # 2. YHCD (Journal of Community Medicine)
     if not state.get("yhcd_completed", False):
-        tot, nc, done = harvest_oai_journal(con, "Tạp chí Y học Cộng đồng", "https://tapchiyhcd.vn/index.php/yhcd/oai", "YHCD", run_id, max_records=2500)
+        tot, nc, done = harvest_oai_journal(con, "Tạp chí Y học Cộng đồng", "https://tapchiyhcd.vn/index.php/yhcd/oai", "YHCD", run_id, max_records=6000)
         total_new += nc
-        if done or nc == 0:
+        if done:
             state["yhcd_completed"] = True
             print("  ==> Tạp chí Y học Cộng đồng completely exhausted and collected!", flush=True)
             
     # 3. VMJ (Vietnam Medical Journal)
-    vmj_max = state.get("vmj_max_records", 3000) + (round_num - 2) * 2000
+    vmj_max = 9500  # Expand VMJ target to 9,500 records in Round 4
     tot, nc, done = harvest_oai_journal(con, "Tạp chí Y học Việt Nam", "https://tapchiyhocvietnam.vn/index.php/vmj/oai", "VMJ", run_id, max_records=vmj_max)
     total_new += nc
+    state["vmj_max_records"] = vmj_max
     if done:
         state["vmj_completed"] = True
         print("  ==> Tạp chí Y học Việt Nam completely exhausted and collected!", flush=True)
