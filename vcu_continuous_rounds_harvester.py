@@ -631,12 +631,9 @@ def execute_round(round_num: int):
         total_new += nc
 
     # 8. Vietnamese Medical Research & Major Hospitals (Round Marathon Enhanced)
-    vn_offset = (round_num - 2) * 250
     vn_queries = [
+        (f"Vietnam Biomedical & Clinical Research 2020-2027 (Round {round_num})", '("Vietnam"[Affiliation] OR "Viet Nam"[Affiliation]) AND 2020:2027[pdat]', 2000, round_offset * 2000),
         (f"Hanoi Medical University Studies (Round {round_num})", '("Hanoi Medical University"[Affiliation])', 400, 2950 + round_offset * 300),
-        (f"University of Medicine and Pharmacy at Ho Chi Minh City (Round {round_num})", '("University of Medicine and Pharmacy at Ho Chi Minh"[Affiliation])', 400, 2500 + round_offset * 300),
-        (f"Pasteur Institute & NIHE Vietnam (Round {round_num})", '("Pasteur Institute"[Affiliation] AND Vietnam[Affiliation]) OR ("National Institute of Hygiene and Epidemiology"[Affiliation])', 400, 1000 + round_offset * 300),
-        (f"Vietnam Clinical Trials & Systematic Reviews (Round {round_num})", '("Vietnam"[Affiliation] OR "Viet Nam"[Affiliation]) AND ("clinical trial"[pt] OR "randomized controlled trial"[pt] OR "systematic review"[pt] OR "multicenter study"[pt])', 1500, 1500 + round_offset * 1500),
     ]
     for label, q, limit, offset in vn_queries:
         tot, nc = harvest_pubmed_batch(con, label, q, run_id, max_items=limit, retstart=offset)
