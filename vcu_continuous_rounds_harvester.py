@@ -449,7 +449,16 @@ def harvest_pubmed_batch(con, source_label: str, query_term: str, run_id: str, m
     
     print(f"\n[PubMed] Querying: {source_label} (retstart={retstart}, max={max_items})...", flush=True)
     body = request_url(BASE + "esearch.fcgi", params, 0.36, user_agent)
-    result = json.loads(body.decode("utf-8"))["esearchresult"]
+    try:
+        result = json.loads(body.decode("utf-8", errors="replace"), strict=False)["esearchresult"]
+    except Exception:
+        try:
+            clean_str = re.sub(r'[\x00-\x1f\x7f-\x9f]', ' ', body.decode("utf-8", errors="replace"))
+            result = json.loads(clean_str, strict=False)["esearchresult"]
+        except Exception as e:
+            print(f"  Warning on esearch for {source_label}: {e}", file=sys.stderr)
+            return 0, 0
+
     total = int(result.get("count", 0))
     ids = result.get("idlist", [])
     print(f"  Total matched: {total:,} | Fetching batch of {len(ids)} articles...", flush=True)
@@ -459,12 +468,16 @@ def harvest_pubmed_batch(con, source_label: str, query_term: str, run_id: str, m
     for offset in range(0, len(ids), batch_size):
         chunk = ids[offset:offset + batch_size]
         if not chunk: continue
-        fp = dict(common); fp.update({"db": "pubmed", "id": ",".join(chunk), "retmode": "xml"})
-        xml_bytes = request_url(BASE + "efetch.fcgi", fp, 0.36, user_agent)
-        root = ET.fromstring(xml_bytes)
-        for node in root.findall(".//PubmedArticle"):
-            rec = parse_pubmed_article(node)
-            if rec: recs.append(rec)
+        try:
+            fp = dict(common); fp.update({"db": "pubmed", "id": ",".join(chunk), "retmode": "xml"})
+            xml_bytes = request_url(BASE + "efetch.fcgi", fp, 0.36, user_agent)
+            root = ET.fromstring(xml_bytes)
+            for node in root.findall(".//PubmedArticle"):
+                rec = parse_pubmed_article(node)
+                if rec: recs.append(rec)
+        except Exception as exc:
+            print(f"  Warning on efetch chunk {offset} for {source_label}: {exc}", file=sys.stderr)
+            continue
             
     new_c = updated_c = 0
     for rec in recs:
