@@ -43,19 +43,20 @@ def main():
     with_mesh = con.execute("SELECT COUNT(*) FROM records WHERE mesh_terms_json IS NOT NULL AND mesh_terms_json != '[]'").fetchone()[0]
     with_abs = con.execute("SELECT COUNT(*) FROM records WHERE abstract IS NOT NULL AND length(abstract) > 0").fetchone()[0]
 
-    # Prestigious Journals Stats
     prestigious_names = [
         ("The Lancet", "%Lancet%"),
         ("The New England Journal of Medicine (NEJM)", "%New England journal of medicine%"),
         ("The BMJ (British Medical Journal)", "%BMJ%"),
-        ("JAMA", "%JAMA%"),
+        ("JAMA & JAMA Internal Medicine", "%JAMA%"),
         ("Annals of Internal Medicine", "%Annals of internal medicine%"),
-        ("Dieutri.vn (Phác đồ & Y học Việt Nam)", "%Dieutri.vn%")
+        ("Dieutri.vn (Phác đồ & Y học lâm sàng Việt Nam)", "%Dieutri.vn%"),
     ]
     p_stats = []
     for label, pat in prestigious_names:
-        row = con.execute("SELECT COUNT(*), SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END) FROM records WHERE journal LIKE ?", (pat,)).fetchone()
-        p_stats.append((label, row[0], row[1]))
+        row = con.execute("SELECT COUNT(*), COALESCE(SUM(CASE WHEN abstract IS NOT NULL AND length(abstract) > 0 THEN 1 ELSE 0 END), 0) FROM records WHERE journal LIKE ?", (pat,)).fetchone()
+        cnt = row[0] or 0
+        abs_c = row[1] or 0
+        p_stats.append((label, cnt, abs_c))
 
     # Stats for 2024 to present
     c_2024_now = con.execute("""
