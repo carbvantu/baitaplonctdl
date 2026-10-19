@@ -1,22 +1,22 @@
 # BÁO CÁO CẬP NHẬT KHO DỮ LIỆU Y SINH HỌC VCU
-*Thời gian xuất báo cáo: 19/10/2026 18:52:37*
+*Thời gian xuất báo cáo: 19/10/2026 19:14:47*
 
 ## 1. Thống Kê Tổng Thể Toàn Bộ Thư Viện
-- **Tổng số bản ghi duy nhất:** 918,485 bài
-- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 619,011 (67.4%)
-- **Bản ghi có định danh số DOI:** 882,884 (96.1%)
-- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 254,557 (27.7%)
-- **Bản ghi có thuật ngữ y học MeSH:** 782,259 (85.2%)
+- **Tổng số bản ghi duy nhất:** 920,688 bài
+- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 621,166 (67.5%)
+- **Bản ghi có định danh số DOI:** 885,082 (96.1%)
+- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 255,916 (27.8%)
+- **Bản ghi có thuật ngữ y học MeSH:** 783,930 (85.1%)
 
 ---
 
 ## 2. Các Tạp Chí Y Khoa Hàng Đầu Quốc Tế & Cơ Sở Dữ Liệu Việt Nam
 | Tạp chí / Nguồn y học | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract | Ghi chú chất lượng |
 |:---|:---:|:---:|:---:|:---|
-| **The Lancet** | 68,322 | 19,397 | 28.4% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The Lancet** | 68,340 | 19,414 | 28.4% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **The New England Journal of Medicine (NEJM)** | 21,885 | 3,614 | 16.5% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **The BMJ (British Medical Journal)** | 23,785 | 3,908 | 16.4% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **JAMA & JAMA Internal Medicine** | 45,816 | 13,611 | 29.7% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The BMJ (British Medical Journal)** | 23,806 | 3,929 | 16.5% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **JAMA & JAMA Internal Medicine** | 45,833 | 13,628 | 29.7% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Annals of Internal Medicine** | 18,775 | 6,225 | 33.2% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Y học Việt Nam (VMJ)** | 15,431 | 15,429 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Nghiên cứu Y học (TCNCYH)** | 2,000 | 2,000 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
@@ -27,10 +27,10 @@
 ---
 
 ## 3. Thống Kê Riêng Giai Đoạn 2024 Đến Nay (2024 – 2027)
-- **Tổng số bài giai đoạn 2024 đến nay:** 259,291 bài
-- **Bài có Full Abstract (tóm tắt gốc tác giả):** 201,103 (77.6%)
-- **Bài có mã DOI:** 258,764 (99.8%)
-- **Bài có PMCID:** 95,924 (37.0%)
+- **Tổng số bài giai đoạn 2024 đến nay:** 261,494 bài
+- **Bài có Full Abstract (tóm tắt gốc tác giả):** 203,258 (77.7%)
+- **Bài có mã DOI:** 260,962 (99.8%)
+- **Bài có PMCID:** 97,283 (37.2%)
 
 ---
 
@@ -45,16 +45,16 @@
 ## 5. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
 | STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| 1 | **Sinh học tính toán** | *Computational biology* | 478,223 | 97.0% | 34.6% | 89.8% | 90.2% |
-| 2 | **Di truyền học** | *Genetics* | 434,396 | 96.8% | 34.4% | 90.8% | 83.9% |
-| 3 | **Ung thư** | *Cancer* | 186,774 | 96.3% | 32.8% | 90.8% | 78.8% |
-| 4 | **Ngoại khoa** | *Surgery* | 167,967 | 95.2% | 25.7% | 92.6% | 88.5% |
-| 5 | **Dược lý học** | *Pharmacology* | 167,801 | 95.5% | 30.8% | 90.5% | 86.7% |
-| 6 | **Nội khoa** | *Internal medicine* | 160,932 | 96.2% | 15.6% | 66.2% | 16.7% |
-| 7 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 160,642 | 96.3% | 35.5% | 90.6% | 92.6% |
-| 8 | **Miễn dịch học** | *Immunology* | 135,463 | 95.9% | 37.9% | 89.9% | 85.4% |
-| 9 | **Bệnh học** | *Pathology* | 93,899 | 95.1% | 32.6% | 90.0% | 92.8% |
-| 10 | **Giải phẫu học** | *Anatomy* | 49,287 | 95.8% | 26.2% | 80.1% | 94.9% |
+| 1 | **Sinh học tính toán** | *Computational biology* | 480,334 | 97.0% | 34.8% | 89.7% | 90.3% |
+| 2 | **Di truyền học** | *Genetics* | 436,001 | 96.8% | 34.6% | 90.7% | 84.0% |
+| 3 | **Ung thư** | *Cancer* | 187,003 | 96.3% | 32.8% | 90.8% | 78.8% |
+| 4 | **Ngoại khoa** | *Surgery* | 168,342 | 95.2% | 25.8% | 92.5% | 88.5% |
+| 5 | **Dược lý học** | *Pharmacology* | 168,288 | 95.5% | 30.9% | 90.5% | 86.7% |
+| 6 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 161,507 | 96.3% | 35.6% | 90.6% | 92.6% |
+| 7 | **Nội khoa** | *Internal medicine* | 160,981 | 96.2% | 15.6% | 66.1% | 16.7% |
+| 8 | **Miễn dịch học** | *Immunology* | 135,930 | 95.9% | 37.9% | 89.9% | 85.5% |
+| 9 | **Bệnh học** | *Pathology* | 94,064 | 95.2% | 32.7% | 90.0% | 92.8% |
+| 10 | **Giải phẫu học** | *Anatomy* | 49,394 | 95.9% | 26.3% | 80.1% | 95.0% |
 | 11 | **Bệnh học tính toán (Seed)** | *Computational pathology* | 1 | 100.0% | 100.0% | 0.0% | 100.0% |
 | 12 | **Trí tuệ nhân tạo lâm sàng (Seed)** | *Clinical AI / imaging* | 1 | 100.0% | 100.0% | 0.0% | 0.0% |
 
@@ -86,8 +86,8 @@
 |:---:|:---:|:---:|:---:|
 | 2028 | 1 | 0 | 0.0% |
 | 2027 | 395 | 386 | 97.7% |
-| 2026 | 126,372 | 106,764 | 84.5% |
-| 2025 | 65,129 | 44,811 | 68.8% |
+| 2026 | 128,512 | 108,856 | 84.7% |
+| 2025 | 65,192 | 44,874 | 68.8% |
 | 2024 | 67,395 | 49,142 | 72.9% |
 | 2023 | 46,099 | 29,084 | 63.1% |
 | 2022 | 43,549 | 29,064 | 66.7% |
