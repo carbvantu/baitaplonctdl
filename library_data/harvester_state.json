@@ -1,5 +1,5 @@
 {
-  "current_round": 40,
+  "current_round": 41,
   "vmj_max_records": 18500,
   "tcncyh_completed": true,
   "yhcd_completed": true,
@@ -239,6 +239,12 @@
       "new_records": 10762,
       "total_records": 1045618,
       "timestamp": "2026-10-20T05:58:59+07:00"
+    },
+    {
+      "round": 40,
+      "new_records": 13247,
+      "total_records": 1058865,
+      "timestamp": "2026-10-20T06:22:35+07:00"
     }
   ],
   "vmj_completed": true
