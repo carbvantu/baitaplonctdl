@@ -635,10 +635,22 @@ def execute_round(round_num: int):
     subprocess.run(["git", "commit", "-m", msg], cwd=str(HERE), check=False)
     
     print(f"Pushing to GitHub origin/main...", flush=True)
-    subprocess.run(["git", "remote", "set-url", "origin", AUTH_URL], cwd=str(HERE), check=True)
-    subprocess.run(["git", "push", "origin", "main"], cwd=str(HERE), check=True)
-    subprocess.run(["git", "remote", "set-url", "origin", REPO_URL], cwd=str(HERE), check=True)
-    print(f"Git push succeeded and credentials sanitized!", flush=True)
+    pushed = False
+    for push_attempt in range(1, 5):
+        try:
+            subprocess.run(["git", "remote", "set-url", "origin", AUTH_URL], cwd=str(HERE), check=True)
+            res = subprocess.run(["git", "push", "origin", "main"], cwd=str(HERE), check=False)
+            if res.returncode == 0:
+                pushed = True
+                print(f"Git push succeeded on attempt {push_attempt}!", flush=True)
+                break
+            print(f"Push attempt {push_attempt} failed with code {res.returncode}, retrying in 5s...", flush=True)
+            time.sleep(5)
+        finally:
+            subprocess.run(["git", "remote", "set-url", "origin", REPO_URL], cwd=str(HERE), check=True)
+            print("Git origin remote sanitized.", flush=True)
+    if not pushed:
+        print(f"Warning: git push could not complete after 4 attempts, continuing to next round...", flush=True)
     
     return total_new, cur_count
 
