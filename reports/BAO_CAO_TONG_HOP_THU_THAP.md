@@ -1,23 +1,23 @@
 # BÁO CÁO CẬP NHẬT KHO DỮ LIỆU Y SINH HỌC VCU
-*Thời gian xuất báo cáo: 20/10/2026 06:49:23*
+*Thời gian xuất báo cáo: 20/10/2026 13:06:55*
 
 ## 1. Thống Kê Tổng Thể Toàn Bộ Thư Viện
-- **Tổng số bản ghi duy nhất:** 1,073,708 bài
-- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 712,306 (66.3%)
-- **Bản ghi có định danh số DOI:** 1,019,383 (94.9%)
-- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 276,707 (25.8%)
-- **Bản ghi có thuật ngữ y học MeSH:** 929,257 (86.5%)
+- **Tổng số bản ghi duy nhất:** 1,087,578 bài
+- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 720,218 (66.2%)
+- **Bản ghi có định danh số DOI:** 1,033,094 (95.0%)
+- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 279,641 (25.7%)
+- **Bản ghi có thuật ngữ y học MeSH:** 942,730 (86.7%)
 
 ---
 
 ## 2. Các Tạp Chí Y Khoa Hàng Đầu Quốc Tế & Cơ Sở Dữ Liệu Việt Nam
 | Tạp chí / Nguồn y học | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract | Ghi chú chất lượng |
 |:---|:---:|:---:|:---:|:---|
-| **The Lancet** | 78,392 | 21,192 | 27.0% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **The New England Journal of Medicine (NEJM)** | 31,854 | 5,217 | 16.4% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **The BMJ (British Medical Journal)** | 33,914 | 5,524 | 16.3% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **JAMA & JAMA Internal Medicine** | 55,867 | 15,974 | 28.6% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **Annals of Internal Medicine** | 22,875 | 7,700 | 33.7% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The Lancet** | 79,389 | 21,379 | 26.9% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The New England Journal of Medicine (NEJM)** | 32,851 | 5,401 | 16.4% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The BMJ (British Medical Journal)** | 34,923 | 5,605 | 16.0% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **JAMA & JAMA Internal Medicine** | 56,869 | 16,194 | 28.5% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **Annals of Internal Medicine** | 23,027 | 7,739 | 33.6% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Y học Việt Nam (VMJ)** | 15,431 | 15,429 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Nghiên cứu Y học (TCNCYH)** | 2,000 | 2,000 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Y học Cộng đồng (YHCD)** | 5,106 | 5,106 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
@@ -45,16 +45,16 @@
 ## 5. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
 | STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| 1 | **Sinh học tính toán** | *Computational biology* | 563,591 | 95.9% | 32.0% | 90.8% | 89.8% |
-| 2 | **Di truyền học** | *Genetics* | 512,571 | 95.5% | 31.6% | 91.7% | 83.1% |
-| 3 | **Ung thư** | *Cancer* | 216,066 | 94.9% | 30.5% | 91.8% | 78.6% |
-| 4 | **Dược lý học** | *Pharmacology* | 199,658 | 94.2% | 28.3% | 91.8% | 86.1% |
-| 5 | **Ngoại khoa** | *Surgery* | 195,081 | 94.0% | 24.0% | 93.3% | 87.9% |
-| 6 | **Nội khoa** | *Internal medicine* | 190,771 | 94.7% | 15.1% | 69.2% | 15.5% |
-| 7 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 184,665 | 95.2% | 33.3% | 91.6% | 92.2% |
-| 8 | **Miễn dịch học** | *Immunology* | 155,367 | 94.2% | 35.4% | 91.1% | 85.2% |
-| 9 | **Bệnh học** | *Pathology* | 104,038 | 94.7% | 30.7% | 90.7% | 92.6% |
-| 10 | **Giải phẫu học** | *Anatomy* | 53,515 | 95.3% | 25.1% | 81.3% | 94.9% |
+| 1 | **Sinh học tính toán** | *Computational biology* | 571,078 | 95.9% | 31.9% | 90.9% | 89.7% |
+| 2 | **Di truyền học** | *Genetics* | 519,576 | 95.6% | 31.6% | 91.8% | 83.0% |
+| 3 | **Ung thư** | *Cancer* | 219,112 | 94.9% | 30.5% | 92.0% | 78.6% |
+| 4 | **Dược lý học** | *Pharmacology* | 202,504 | 94.2% | 28.3% | 91.9% | 86.0% |
+| 5 | **Ngoại khoa** | *Surgery* | 197,518 | 94.0% | 24.0% | 93.4% | 87.8% |
+| 6 | **Nội khoa** | *Internal medicine* | 193,439 | 94.8% | 14.9% | 69.6% | 15.3% |
+| 7 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 186,629 | 95.2% | 33.3% | 91.7% | 92.2% |
+| 8 | **Miễn dịch học** | *Immunology* | 157,160 | 94.3% | 35.4% | 91.2% | 85.2% |
+| 9 | **Bệnh học** | *Pathology* | 104,780 | 94.7% | 30.7% | 90.8% | 92.6% |
+| 10 | **Giải phẫu học** | *Anatomy* | 53,836 | 95.3% | 25.1% | 81.4% | 94.8% |
 | 11 | **Bệnh học tính toán (Seed)** | *Computational pathology* | 1 | 100.0% | 100.0% | 0.0% | 100.0% |
 | 12 | **Trí tuệ nhân tạo lâm sàng (Seed)** | *Clinical AI / imaging* | 1 | 100.0% | 100.0% | 0.0% | 0.0% |
 
@@ -63,21 +63,21 @@
 ## 6. Top 15 Tạp Chí Xuất Bản Uy Tín
 | STT | Tạp chí | Số lượng bài |
 |:---:|:---|:---:|
-| 1 | *BMJ (Clinical research ed.)* | 32,128 |
-| 2 | *JAMA* | 32,065 |
-| 3 | *Lancet (London, England)* | 31,870 |
-| 4 | *The New England journal of medicine* | 31,854 |
-| 5 | *Nature* | 28,246 |
-| 6 | *Science (New York, N.Y.)* | 26,633 |
-| 7 | *Blood* | 25,463 |
-| 8 | *Circulation* | 24,503 |
-| 9 | *Journal of the American College of Cardiology* | 23,388 |
-| 10 | *Annals of internal medicine* | 22,875 |
-| 11 | *Chest* | 22,726 |
-| 12 | *Journal of clinical oncology : official journal of the American Society of Clinical Oncology* | 20,774 |
-| 13 | *Pediatrics* | 20,759 |
+| 1 | *BMJ (Clinical research ed.)* | 33,126 |
+| 2 | *JAMA* | 33,060 |
+| 3 | *Lancet (London, England)* | 32,867 |
+| 4 | *The New England journal of medicine* | 32,851 |
+| 5 | *Nature* | 29,046 |
+| 6 | *Science (New York, N.Y.)* | 27,433 |
+| 7 | *Blood* | 26,266 |
+| 8 | *Circulation* | 25,301 |
+| 9 | *Journal of the American College of Cardiology* | 24,188 |
+| 10 | *Annals of internal medicine* | 23,027 |
+| 11 | *Chest* | 22,779 |
+| 12 | *Pediatrics* | 21,559 |
+| 13 | *Journal of clinical oncology : official journal of the American Society of Clinical Oncology* | 21,557 |
 | 14 | *European heart journal* | 19,836 |
-| 15 | *Gastroenterology* | 19,788 |
+| 15 | *Gastroenterology* | 19,790 |
 
 ---
 
@@ -98,11 +98,11 @@
 | 2017 | 23,993 | 13,106 | 54.6% |
 | 2016 | 22,263 | 12,066 | 54.2% |
 | 2015 | 26,537 | 18,297 | 68.9% |
-| 2014 | 46,217 | 29,539 | 63.9% |
-| 2013 | 26,992 | 16,084 | 59.6% |
-| 2012 | 15,001 | 10,096 | 67.3% |
-| 2011 | 11,062 | 7,690 | 69.5% |
-| 2010 | 13,384 | 10,275 | 76.8% |
+| 2014 | 48,314 | 31,418 | 65.0% |
+| 2013 | 31,523 | 18,572 | 58.9% |
+| 2012 | 17,951 | 11,177 | 62.3% |
+| 2011 | 14,017 | 9,179 | 65.5% |
+| 2010 | 14,721 | 11,250 | 76.4% |
 | 2009 | 37,337 | 25,560 | 68.5% |
 | 2008 | 23,993 | 13,792 | 57.5% |
 | 2007 | 17,456 | 10,809 | 61.9% |
