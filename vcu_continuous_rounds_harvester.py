@@ -461,12 +461,30 @@ def harvest_pubmed_batch(con, source_label: str, query_term: str, run_id: str, m
 
     total = int(result.get("count", 0))
     ids = result.get("idlist", [])
-    print(f"  Total matched: {total:,} | Fetching batch of {len(ids)} articles...", flush=True)
+    if not ids:
+        return 0, 0
+
+    # Check database to strictly only fetch missing records (không thu thập dữ liệu cũ, chỉ lấy dữ liệu bị bỏ sót)
+    missing_ids = []
+    chunk_check = 500
+    for i in range(0, len(ids), chunk_check):
+        c_ids = ids[i:i + chunk_check]
+        placeholders = ",".join("?" * len(c_ids))
+        cur = con.execute(f"SELECT pmid FROM records WHERE pmid IN ({placeholders})", c_ids)
+        existing = set(str(r[0]) for r in cur.fetchall())
+        for pid in c_ids:
+            if pid not in existing:
+                missing_ids.append(pid)
+
+    already_in_db = len(ids) - len(missing_ids)
+    print(f"  Matched: {total:,} | Bị bỏ sót (Truly Missing): {len(missing_ids)} | Đã có sẵn trong CSDL: {already_in_db}", flush=True)
+    if not missing_ids:
+        return already_in_db, 0
     
     recs = []
     batch_size = 200
-    for offset in range(0, len(ids), batch_size):
-        chunk = ids[offset:offset + batch_size]
+    for offset in range(0, len(missing_ids), batch_size):
+        chunk = missing_ids[offset:offset + batch_size]
         if not chunk: continue
         try:
             fp = dict(common); fp.update({"db": "pubmed", "id": ",".join(chunk), "retmode": "xml"})
