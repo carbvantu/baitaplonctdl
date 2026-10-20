@@ -269,6 +269,12 @@
       "new_records": 5006,
       "total_records": 1103770,
       "timestamp": "2026-10-20T20:07:33+07:00"
+    },
+    {
+      "round": "gap_sweep",
+      "new_records": 2161,
+      "total_records": 1105932,
+      "timestamp": "2026-10-20T21:53:24+07:00"
     }
   ],
   "vmj_completed": true
