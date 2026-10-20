@@ -1,22 +1,22 @@
 # BÁO CÁO CẬP NHẬT KHO DỮ LIỆU Y SINH HỌC VCU
-*Thời gian xuất báo cáo: 20/10/2026 13:06:55*
+*Thời gian xuất báo cáo: 20/10/2026 13:35:18*
 
 ## 1. Thống Kê Tổng Thể Toàn Bộ Thư Viện
-- **Tổng số bản ghi duy nhất:** 1,087,578 bài
-- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 720,218 (66.2%)
-- **Bản ghi có định danh số DOI:** 1,033,094 (95.0%)
-- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 279,641 (25.7%)
-- **Bản ghi có thuật ngữ y học MeSH:** 942,730 (86.7%)
+- **Tổng số bản ghi duy nhất:** 1,098,764 bài
+- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 726,457 (66.1%)
+- **Bản ghi có định danh số DOI:** 1,044,105 (95.0%)
+- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 282,367 (25.7%)
+- **Bản ghi có thuật ngữ y học MeSH:** 952,056 (86.6%)
 
 ---
 
 ## 2. Các Tạp Chí Y Khoa Hàng Đầu Quốc Tế & Cơ Sở Dữ Liệu Việt Nam
 | Tạp chí / Nguồn y học | Tổng số bài | Số bài có Full Abstract | Tỷ lệ Abstract | Ghi chú chất lượng |
 |:---|:---:|:---:|:---:|:---|
-| **The Lancet** | 79,389 | 21,379 | 26.9% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **The New England Journal of Medicine (NEJM)** | 32,851 | 5,401 | 16.4% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **The BMJ (British Medical Journal)** | 34,923 | 5,605 | 16.0% | Nghiên cứu y học lâm sàng đỉnh cao |
-| **JAMA & JAMA Internal Medicine** | 56,869 | 16,194 | 28.5% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The Lancet** | 80,398 | 21,618 | 26.9% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The New England Journal of Medicine (NEJM)** | 33,846 | 5,547 | 16.4% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **The BMJ (British Medical Journal)** | 35,974 | 5,761 | 16.0% | Nghiên cứu y học lâm sàng đỉnh cao |
+| **JAMA & JAMA Internal Medicine** | 57,881 | 16,376 | 28.3% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Annals of Internal Medicine** | 23,027 | 7,739 | 33.6% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Y học Việt Nam (VMJ)** | 15,431 | 15,429 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
 | **Tạp chí Nghiên cứu Y học (TCNCYH)** | 2,000 | 2,000 | 100.0% | Nghiên cứu y học lâm sàng đỉnh cao |
@@ -45,16 +45,16 @@
 ## 5. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
 | STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| 1 | **Sinh học tính toán** | *Computational biology* | 571,078 | 95.9% | 31.9% | 90.9% | 89.7% |
-| 2 | **Di truyền học** | *Genetics* | 519,576 | 95.6% | 31.6% | 91.8% | 83.0% |
-| 3 | **Ung thư** | *Cancer* | 219,112 | 94.9% | 30.5% | 92.0% | 78.6% |
-| 4 | **Dược lý học** | *Pharmacology* | 202,504 | 94.2% | 28.3% | 91.9% | 86.0% |
-| 5 | **Ngoại khoa** | *Surgery* | 197,518 | 94.0% | 24.0% | 93.4% | 87.8% |
-| 6 | **Nội khoa** | *Internal medicine* | 193,439 | 94.8% | 14.9% | 69.6% | 15.3% |
-| 7 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 186,629 | 95.2% | 33.3% | 91.7% | 92.2% |
-| 8 | **Miễn dịch học** | *Immunology* | 157,160 | 94.3% | 35.4% | 91.2% | 85.2% |
-| 9 | **Bệnh học** | *Pathology* | 104,780 | 94.7% | 30.7% | 90.8% | 92.6% |
-| 10 | **Giải phẫu học** | *Anatomy* | 53,836 | 95.3% | 25.1% | 81.4% | 94.8% |
+| 1 | **Sinh học tính toán** | *Computational biology* | 576,934 | 95.9% | 32.0% | 90.9% | 89.7% |
+| 2 | **Di truyền học** | *Genetics* | 524,610 | 95.6% | 31.7% | 91.8% | 83.0% |
+| 3 | **Ung thư** | *Cancer* | 220,999 | 95.0% | 30.5% | 92.0% | 78.6% |
+| 4 | **Dược lý học** | *Pharmacology* | 204,521 | 94.3% | 28.4% | 92.0% | 86.0% |
+| 5 | **Ngoại khoa** | *Surgery* | 199,345 | 94.1% | 24.0% | 93.4% | 87.8% |
+| 6 | **Nội khoa** | *Internal medicine* | 196,310 | 94.8% | 14.8% | 69.5% | 15.2% |
+| 7 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 188,201 | 95.3% | 33.3% | 91.7% | 92.2% |
+| 8 | **Miễn dịch học** | *Immunology* | 158,382 | 94.3% | 35.4% | 91.2% | 85.2% |
+| 9 | **Bệnh học** | *Pathology* | 105,281 | 94.7% | 30.7% | 90.8% | 92.6% |
+| 10 | **Giải phẫu học** | *Anatomy* | 54,068 | 95.4% | 25.1% | 81.5% | 94.8% |
 | 11 | **Bệnh học tính toán (Seed)** | *Computational pathology* | 1 | 100.0% | 100.0% | 0.0% | 100.0% |
 | 12 | **Trí tuệ nhân tạo lâm sàng (Seed)** | *Clinical AI / imaging* | 1 | 100.0% | 100.0% | 0.0% | 0.0% |
 
@@ -63,20 +63,20 @@
 ## 6. Top 15 Tạp Chí Xuất Bản Uy Tín
 | STT | Tạp chí | Số lượng bài |
 |:---:|:---|:---:|
-| 1 | *BMJ (Clinical research ed.)* | 33,126 |
-| 2 | *JAMA* | 33,060 |
-| 3 | *Lancet (London, England)* | 32,867 |
-| 4 | *The New England journal of medicine* | 32,851 |
-| 5 | *Nature* | 29,046 |
-| 6 | *Science (New York, N.Y.)* | 27,433 |
-| 7 | *Blood* | 26,266 |
+| 1 | *BMJ (Clinical research ed.)* | 34,125 |
+| 2 | *JAMA* | 34,059 |
+| 3 | *Lancet (London, England)* | 33,864 |
+| 4 | *The New England journal of medicine* | 33,846 |
+| 5 | *Nature* | 29,846 |
+| 6 | *Science (New York, N.Y.)* | 28,233 |
+| 7 | *Blood* | 26,269 |
 | 8 | *Circulation* | 25,301 |
 | 9 | *Journal of the American College of Cardiology* | 24,188 |
 | 10 | *Annals of internal medicine* | 23,027 |
 | 11 | *Chest* | 22,779 |
-| 12 | *Pediatrics* | 21,559 |
+| 12 | *Pediatrics* | 22,358 |
 | 13 | *Journal of clinical oncology : official journal of the American Society of Clinical Oncology* | 21,557 |
-| 14 | *European heart journal* | 19,836 |
+| 14 | *European heart journal* | 20,412 |
 | 15 | *Gastroenterology* | 19,790 |
 
 ---
@@ -93,11 +93,11 @@
 | 2022 | 43,552 | 29,067 | 66.7% |
 | 2021 | 42,581 | 26,722 | 62.8% |
 | 2020 | 41,536 | 23,024 | 55.4% |
-| 2019 | 52,007 | 28,619 | 55.0% |
-| 2018 | 32,528 | 17,229 | 53.0% |
-| 2017 | 23,993 | 13,106 | 54.6% |
-| 2016 | 22,263 | 12,066 | 54.2% |
-| 2015 | 26,537 | 18,297 | 68.9% |
+| 2019 | 53,882 | 30,470 | 56.5% |
+| 2018 | 38,059 | 20,363 | 53.5% |
+| 2017 | 26,395 | 13,520 | 51.2% |
+| 2016 | 22,484 | 12,192 | 54.2% |
+| 2015 | 27,694 | 19,011 | 68.6% |
 | 2014 | 48,314 | 31,418 | 65.0% |
 | 2013 | 31,523 | 18,572 | 58.9% |
 | 2012 | 17,951 | 11,177 | 62.3% |
