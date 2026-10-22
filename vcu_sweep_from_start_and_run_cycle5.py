@@ -93,8 +93,8 @@ def comprehensive_gap_sweep():
         print(f"[*] Quét rà soát Kỷ nguyên {era_idx + 1}/8: {era_title}", flush=True)
         print(f"{'*'*60}", flush=True)
 
-        # Offsets to verify: 0, 1000, 2000, 3000
-        for offset in [0, 1000, 2000, 3000]:
+        # Offsets to verify: 0, 1000, 2000, 3000, 4000, 5000 (Cycles 1 to 6)
+        for offset in [0, 1000, 2000, 3000, 4000, 5000]:
             top_journals = [
                 (f"NEJM ({era_range})", f'"N Engl J Med"[Journal] AND {era_range}[pdat]', 1000, offset),
                 (f"The Lancet ({era_range})", f'"Lancet"[Journal] AND {era_range}[pdat]', 1000, offset),

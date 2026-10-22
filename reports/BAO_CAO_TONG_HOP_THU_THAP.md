@@ -1,12 +1,12 @@
 # BÁO CÁO CẬP NHẬT KHO DỮ LIỆU Y SINH HỌC VCU
-*Thời gian xuất báo cáo: 22/10/2026 13:14:33*
+*Thời gian xuất báo cáo: 22/10/2026 20:10:44*
 
 ## 1. Thống Kê Tổng Thể Toàn Bộ Thư Viện
-- **Tổng số bản ghi duy nhất:** 1,239,891 bài
-- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 808,976 (65.2%)
-- **Bản ghi có định danh số DOI:** 1,170,102 (94.4%)
-- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 312,345 (25.2%)
-- **Bản ghi có thuật ngữ y học MeSH:** 1,081,291 (87.2%)
+- **Tổng số bản ghi duy nhất:** 1,239,892 bài
+- **Bản ghi có tóm tắt nghiên cứu gốc đầy đủ (Full Abstract):** 808,977 (65.2%)
+- **Bản ghi có định danh số DOI:** 1,170,103 (94.4%)
+- **Bản ghi có mã PMCID (khả năng mở rộng toàn văn PMC):** 312,346 (25.2%)
+- **Bản ghi có thuật ngữ y học MeSH:** 1,081,292 (87.2%)
 
 ---
 
@@ -27,10 +27,10 @@
 ---
 
 ## 3. Thống Kê Riêng Giai Đoạn 2024 Đến Nay (2024 – 2027)
-- **Tổng số bài giai đoạn 2024 đến nay:** 280,275 bài
-- **Bài có Full Abstract (tóm tắt gốc tác giả):** 220,580 (78.7%)
-- **Bài có mã DOI:** 279,633 (99.8%)
-- **Bài có PMCID:** 107,159 (38.2%)
+- **Tổng số bài giai đoạn 2024 đến nay:** 280,276 bài
+- **Bài có Full Abstract (tóm tắt gốc tác giả):** 220,581 (78.7%)
+- **Bài có mã DOI:** 279,634 (99.8%)
+- **Bài có PMCID:** 107,160 (38.2%)
 
 ---
 
@@ -45,10 +45,10 @@
 ## 5. Phân Bố Theo 10 Chuyên Ngành Y Học Trọng Điểm
 | STT | Chuyên ngành | Tiếng Anh | Số lượng bài | Có DOI | Có PMCID | Có MeSH | Có Full Abstract |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| 1 | **Sinh học tính toán** | *Computational biology* | 652,862 | 95.3% | 31.4% | 91.4% | 89.4% |
-| 2 | **Di truyền học** | *Genetics* | 595,315 | 95.0% | 30.9% | 92.3% | 82.4% |
+| 1 | **Sinh học tính toán** | *Computational biology* | 652,863 | 95.3% | 31.4% | 91.4% | 89.4% |
+| 2 | **Di truyền học** | *Genetics* | 595,316 | 95.0% | 30.9% | 92.3% | 82.4% |
 | 3 | **Ung thư** | *Cancer* | 251,571 | 94.1% | 30.0% | 92.7% | 78.8% |
-| 4 | **Dược lý học** | *Pharmacology* | 234,700 | 93.5% | 27.9% | 92.8% | 85.5% |
+| 4 | **Dược lý học** | *Pharmacology* | 234,701 | 93.5% | 27.9% | 92.8% | 85.5% |
 | 5 | **Nội khoa** | *Internal medicine* | 225,360 | 93.9% | 14.6% | 70.5% | 14.1% |
 | 6 | **Ngoại khoa** | *Surgery* | 224,993 | 93.4% | 23.8% | 93.9% | 87.5% |
 | 7 | **Xét nghiệm chẩn đoán** | *Laboratory diagnostics* | 208,960 | 94.7% | 33.0% | 92.3% | 92.1% |
@@ -86,7 +86,7 @@
 |:---:|:---:|:---:|:---:|
 | 2028 | 1 | 0 | 0.0% |
 | 2027 | 396 | 387 | 97.7% |
-| 2026 | 131,427 | 111,601 | 84.9% |
+| 2026 | 131,428 | 111,602 | 84.9% |
 | 2025 | 70,021 | 49,699 | 71.0% |
 | 2024 | 78,431 | 58,893 | 75.1% |
 | 2023 | 53,802 | 35,667 | 66.3% |
